@@ -1,0 +1,363 @@
+{
+  "actions": {
+    "idle": {
+      "files": [
+        "v2_anim_idle_0_c0.png",
+        "v2_anim_idle_1_c0.png"
+      ],
+      "pre_registration": [
+        {
+          "height": 44,
+          "width": 32,
+          "baseline": 51,
+          "centroid_x": 29.72,
+          "components": 2,
+          "lcc": 0.9987
+        },
+        {
+          "height": 39,
+          "width": 27,
+          "baseline": 44,
+          "centroid_x": 28.76,
+          "components": 1,
+          "lcc": 1.0
+        }
+      ],
+      "pre_palette_jaccard_vs_frame1": [
+        1.0,
+        0.0
+      ],
+      "offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          7
+        ]
+      ],
+      "post_registration": [
+        {
+          "height": 44,
+          "width": 32,
+          "baseline": 51,
+          "centroid_x": 29.72,
+          "components": 2,
+          "lcc": 0.9987
+        },
+        {
+          "height": 39,
+          "width": 27,
+          "baseline": 51,
+          "centroid_x": 29.76,
+          "components": 1,
+          "lcc": 1.0
+        }
+      ],
+      "post_baseline_spread": 0,
+      "post_centroid_spread": 0.04,
+      "sheet": "knight_idle_v2_sheet.png"
+    },
+    "walk": {
+      "files": [
+        "v2_anim_walk_0_c0.png",
+        "v2_anim_walk_1_c0.png",
+        "v2_anim_walk_2_c0.png",
+        "v2_anim_walk_3_c0.png"
+      ],
+      "pre_registration": [
+        {
+          "height": 41,
+          "width": 30,
+          "baseline": 50,
+          "centroid_x": 29.38,
+          "components": 2,
+          "lcc": 0.9986
+        },
+        {
+          "height": 37,
+          "width": 29,
+          "baseline": 43,
+          "centroid_x": 28.97,
+          "components": 1,
+          "lcc": 1.0
+        },
+        {
+          "height": 42,
+          "width": 29,
+          "baseline": 50,
+          "centroid_x": 30.68,
+          "components": 3,
+          "lcc": 0.9899
+        },
+        {
+          "height": 37,
+          "width": 25,
+          "baseline": 47,
+          "centroid_x": 29.49,
+          "components": 2,
+          "lcc": 0.992
+        }
+      ],
+      "pre_palette_jaccard_vs_frame1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0323
+      ],
+      "offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "post_registration": [
+        {
+          "height": 41,
+          "width": 30,
+          "baseline": 50,
+          "centroid_x": 29.38,
+          "components": 2,
+          "lcc": 0.9986
+        },
+        {
+          "height": 37,
+          "width": 29,
+          "baseline": 50,
+          "centroid_x": 28.97,
+          "components": 1,
+          "lcc": 1.0
+        },
+        {
+          "height": 42,
+          "width": 29,
+          "baseline": 50,
+          "centroid_x": 29.68,
+          "components": 3,
+          "lcc": 0.9899
+        },
+        {
+          "height": 37,
+          "width": 25,
+          "baseline": 50,
+          "centroid_x": 29.49,
+          "components": 2,
+          "lcc": 0.992
+        }
+      ],
+      "post_baseline_spread": 0,
+      "post_centroid_spread": 0.71,
+      "sheet": "knight_walk_v2_sheet.png"
+    },
+    "attack": {
+      "files": [
+        "v2_anim_attack_0_c0.png",
+        "v2_anim_attack_1_c0.png",
+        "v2_anim_attack_2_c0.png"
+      ],
+      "pre_registration": [
+        {
+          "height": 41,
+          "width": 32,
+          "baseline": 50,
+          "centroid_x": 29.72,
+          "components": 5,
+          "lcc": 0.9856
+        },
+        {
+          "height": 38,
+          "width": 28,
+          "baseline": 44,
+          "centroid_x": 28.41,
+          "components": 1,
+          "lcc": 1.0
+        },
+        {
+          "height": 41,
+          "width": 29,
+          "baseline": 49,
+          "centroid_x": 31.17,
+          "components": 2,
+          "lcc": 0.9985
+        }
+      ],
+      "pre_palette_jaccard_vs_frame1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "post_registration": [
+        {
+          "height": 41,
+          "width": 32,
+          "baseline": 50,
+          "centroid_x": 29.72,
+          "components": 5,
+          "lcc": 0.9856
+        },
+        {
+          "height": 38,
+          "width": 28,
+          "baseline": 50,
+          "centroid_x": 29.41,
+          "components": 1,
+          "lcc": 1.0
+        },
+        {
+          "height": 41,
+          "width": 29,
+          "baseline": 50,
+          "centroid_x": 30.17,
+          "components": 2,
+          "lcc": 0.9985
+        }
+      ],
+      "post_baseline_spread": 0,
+      "post_centroid_spread": 0.76,
+      "sheet": "knight_attack_v2_sheet.png"
+    }
+  },
+  "palette_report": {
+    "idle": {
+      "frames_raw_palette_jaccard_vs_f1": [
+        1.0,
+        0.0
+      ],
+      "frames_5bit_bucket_jaccard_vs_f1": [
+        1.0,
+        0.0
+      ],
+      "phase1_frame_5bit_bucket_jaccard_vs_v2_f1": [
+        0.0,
+        0.0
+      ],
+      "remapped_jaccard_vs_common_palette": [
+        0.4103,
+        0.4103
+      ],
+      "offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          7
+        ]
+      ],
+      "post_baseline_spread": 0,
+      "post_centroid_spread": 0.04
+    },
+    "walk": {
+      "frames_raw_palette_jaccard_vs_f1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0323
+      ],
+      "frames_5bit_bucket_jaccard_vs_f1": [
+        1.0,
+        0.0323,
+        0.0323,
+        0.0323
+      ],
+      "phase1_frame_5bit_bucket_jaccard_vs_v2_f1": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "remapped_jaccard_vs_common_palette": [
+        0.4103,
+        0.359,
+        0.4103,
+        0.4103
+      ],
+      "offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "post_baseline_spread": 0,
+      "post_centroid_spread": 0.71
+    },
+    "attack": {
+      "frames_raw_palette_jaccard_vs_f1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "frames_5bit_bucket_jaccard_vs_f1": [
+        1.0,
+        0.0323,
+        0.0323
+      ],
+      "phase1_frame_5bit_bucket_jaccard_vs_v2_f1": [
+        0.0,
+        0.0,
+        0.0323
+      ],
+      "remapped_jaccard_vs_common_palette": [
+        0.359,
+        0.3846,
+        0.4103
+      ],
+      "offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "post_baseline_spread": 0,
+      "post_centroid_spread": 0.76
+    }
+  }
+}

@@ -1,0 +1,745 @@
+{
+  "pack_version": "1.0.0",
+  "date": "2026-11-12",
+  "palettes_ref": "metadata/palettes.json",
+  "processing_log": [
+    "tiles: copied 10 tiles, 16-color palettes extracted",
+    "autotiles: grass_dirt blob47 atlas (256, 192) + demo 20x20",
+    "autotiles: grass_water blob47 atlas (256, 192) + demo 20x20",
+    "autotiles: dirt_stone blob47 atlas (256, 192) + demo 20x20",
+    "autotiles: grass_water wang16 atlas + demo",
+    "icons: outline unification -> set median boundary color #4E4E3E",
+    "icons: consensus palette k=32 seed=0 restarts=5 fitted on 3270 opaque px",
+    "icons: before/after board -> /Users/viktor/Projects/AI/game-asset-ai/packs/game-asset-pack-v1/metadata/icon_palette_before_after.png",
+    "icons: 16 final icons + atlas_4x4 saved",
+    "characters: 4 views, turntable GIFs, contact sheet, 39-color palette",
+    "animations: 3 registered sheets + GIFs (64/256, 10fps)",
+    "hd: 6 rekeyed assets copied"
+  ],
+  "entries": [
+    {
+      "id": "tile_grass_32",
+      "path": "tiles/grass_32.png",
+      "size": 4093,
+      "status": "READY",
+      "notes": "tier-1: seamless, 16-color palette",
+      "metrics": {
+        "avg_row_seam": 9.1146,
+        "avg_col_seam": 8.7292,
+        "autoperiod_x": 5,
+        "autoperiod_y": 2,
+        "autoperiod_strength": 0.1038,
+        "edge_density_mean": 35.3259,
+        "luminance_drift": 0.8667,
+        "palette_size": 16
+      }
+    },
+    {
+      "id": "tile_grass_64",
+      "path": "tiles/grass_64.png",
+      "size": 8772,
+      "status": "READY",
+      "notes": "tier-1: seamless, 16-color palette",
+      "metrics": {
+        "avg_row_seam": 8.0208,
+        "avg_col_seam": 8.4531,
+        "autoperiod_x": 3,
+        "autoperiod_y": 22,
+        "autoperiod_strength": 0.047,
+        "edge_density_mean": 36.8908,
+        "luminance_drift": 1.3427,
+        "palette_size": 16
+      }
+    },
+    {
+      "id": "tile_dirt_32",
+      "path": "tiles/dirt_32.png",
+      "size": 4124,
+      "status": "READY",
+      "notes": "tier-1: seamless, 16-color palette",
+      "metrics": {
+        "avg_row_seam": 10.2708,
+        "avg_col_seam": 10.3229,
+        "autoperiod_x": 16,
+        "autoperiod_y": 11,
+        "autoperiod_strength": 0.1338,
+        "edge_density_mean": 52.8129,
+        "luminance_drift": 1.4301,
+        "palette_size": 16
+      }
+    },
+    {
+      "id": "tile_dirt_64",
+      "path": "tiles/dirt_64.png",
+      "size": 8141,
+      "status": "READY",
+      "notes": "tier-1: seamless, 16-color palette",
+      "metrics": {
+        "avg_row_seam": 8.1458,
+        "avg_col_seam": 7.2188,
+        "autoperiod_x": 2,
+        "autoperiod_y": 31,
+        "autoperiod_strength": 0.1722,
+        "edge_density_mean": 49.774,
+        "luminance_drift": 0.9751,
+        "palette_size": 16
+      }
+    },
+    {
+      "id": "tile_water_32",
+      "path": "tiles/water_32.png",
+      "size": 3945,
+      "status": "READY",
+      "notes": "tier-1: seamless, 16-color palette",
+      "metrics": {
+        "avg_row_seam": 8.2188,
+        "avg_col_seam": 5.5521,
+        "autoperiod_x": 2,
+        "autoperiod_y": 15,
+        "autoperiod_strength": 0.0485,
+        "edge_density_mean": 30.4142,
+        "luminance_drift": 1.6506,
+        "palette_size": 16
+      }
+    },
+    {
+      "id": "tile_water_64",
+      "path": "tiles/water_64.png",
+      "size": 7167,
+      "status": "READY",
+      "notes": "tier-1: seamless, 16-color palette",
+      "metrics": {
+        "avg_row_seam": 6.7031,
+        "avg_col_seam": 3.5521,
+        "autoperiod_x": 2,
+        "autoperiod_y": 17,
+        "autoperiod_strength": 0.169,
+        "edge_density_mean": 30.2634,
+        "luminance_drift": 1.6329,
+        "palette_size": 16
+      }
+    },
+    {
+      "id": "tile_sand_32",
+      "path": "tiles/sand_32.png",
+      "size": 4003,
+      "status": "NEEDS_WORK",
+      "notes": "tier-2: measurable seams + wallpapering repetition",
+      "metrics": {
+        "avg_row_seam": 20.6979,
+        "avg_col_seam": 10.2708,
+        "autoperiod_x": 2,
+        "autoperiod_y": 5,
+        "autoperiod_strength": 0.2698,
+        "edge_density_mean": 91.165,
+        "luminance_drift": 1.6554,
+        "palette_size": 16
+      }
+    },
+    {
+      "id": "tile_sand_64",
+      "path": "tiles/sand_64.png",
+      "size": 6707,
+      "status": "NEEDS_WORK",
+      "notes": "tier-2: measurable seams + wallpapering repetition",
+      "metrics": {
+        "avg_row_seam": 18.5781,
+        "avg_col_seam": 7.3698,
+        "autoperiod_x": 2,
+        "autoperiod_y": 30,
+        "autoperiod_strength": 0.5979,
+        "edge_density_mean": 88.7063,
+        "luminance_drift": 2.0911,
+        "palette_size": 16
+      }
+    },
+    {
+      "id": "tile_stone_32",
+      "path": "tiles/stone_32.png",
+      "size": 4152,
+      "status": "NEEDS_WORK",
+      "notes": "tier-2: measurable seams + wallpapering repetition",
+      "metrics": {
+        "avg_row_seam": 17.4688,
+        "avg_col_seam": 16.875,
+        "autoperiod_x": 4,
+        "autoperiod_y": 14,
+        "autoperiod_strength": 0.1891,
+        "edge_density_mean": 79.5458,
+        "luminance_drift": 2.8497,
+        "palette_size": 16
+      }
+    },
+    {
+      "id": "tile_stone_64",
+      "path": "tiles/stone_64.png",
+      "size": 7537,
+      "status": "NEEDS_WORK",
+      "notes": "tier-2: measurable seams + wallpapering repetition",
+      "metrics": {
+        "avg_row_seam": 12.7083,
+        "avg_col_seam": 4.9115,
+        "autoperiod_x": 2,
+        "autoperiod_y": 28,
+        "autoperiod_strength": 0.4081,
+        "edge_density_mean": 79.8029,
+        "luminance_drift": 3.0297,
+        "palette_size": 16
+      }
+    },
+    {
+      "id": "autotile_grass_dirt_blob47",
+      "path": "autotiles/atlas_grass_dirt_blob47.png",
+      "size": 16485,
+      "status": "READY",
+      "notes": "blob47 atlas 8x6, 32px tiles; overlay=grass_32 base=dirt_32; mapping in metadata/autotiles/grass_dirt.json; edge-continuity verified",
+      "metrics": {
+        "tiles": 47,
+        "tile_size": 32
+      }
+    },
+    {
+      "id": "autotile_demo_grass_dirt",
+      "path": "autotiles/demo_grass_dirt.png",
+      "size": 96965,
+      "status": "READY",
+      "notes": "20x20 blob47 island demo (seed 1)",
+      "metrics": {}
+    },
+    {
+      "id": "autotile_grass_water_blob47",
+      "path": "autotiles/atlas_grass_water_blob47.png",
+      "size": 16292,
+      "status": "READY",
+      "notes": "blob47 atlas 8x6, 32px tiles; overlay=grass_32 base=water_32; mapping in metadata/autotiles/grass_water.json; edge-continuity verified",
+      "metrics": {
+        "tiles": 47,
+        "tile_size": 32
+      }
+    },
+    {
+      "id": "autotile_demo_grass_water",
+      "path": "autotiles/demo_grass_water.png",
+      "size": 96700,
+      "status": "READY",
+      "notes": "20x20 blob47 island demo (seed 1)",
+      "metrics": {}
+    },
+    {
+      "id": "autotile_dirt_stone_blob47",
+      "path": "autotiles/atlas_dirt_stone_blob47.png",
+      "size": 16928,
+      "status": "READY",
+      "notes": "blob47 atlas 8x6, 32px tiles; overlay=dirt_32 base=stone_32; mapping in metadata/autotiles/dirt_stone.json; edge-continuity verified",
+      "metrics": {
+        "tiles": 47,
+        "tile_size": 32
+      }
+    },
+    {
+      "id": "autotile_demo_dirt_stone",
+      "path": "autotiles/demo_dirt_stone.png",
+      "size": 98567,
+      "status": "READY",
+      "notes": "20x20 blob47 island demo (seed 1)",
+      "metrics": {}
+    },
+    {
+      "id": "autotile_grass_water_wang16",
+      "path": "autotiles/atlas_grass_water_wang16.png",
+      "size": 6723,
+      "status": "READY",
+      "notes": "wang16 dual-grid atlas, 32px tiles",
+      "metrics": {}
+    },
+    {
+      "id": "icon_weapon_sword",
+      "path": "icons/weapon_sword.png",
+      "size": 714,
+      "status": "READY",
+      "notes": "blade/hilt/crossguard coherent; boundary unified, consensus palette applied",
+      "metrics": {
+        "speckles_removed_final_pass": 0,
+        "phase1_lcc": 0.8968,
+        "phase1_components": 3,
+        "phase1_boundary_pct": 21.35
+      }
+    },
+    {
+      "id": "icon_weapon_dagger",
+      "path": "icons/weapon_dagger.png",
+      "size": 436,
+      "status": "NEEDS_WORK",
+      "notes": "hilt and blade disconnected (largest_component_fraction 0.4918)",
+      "metrics": {
+        "speckles_removed_final_pass": 0,
+        "phase1_lcc": 0.4918,
+        "phase1_components": 3,
+        "phase1_boundary_pct": 21.82
+      }
+    },
+    {
+      "id": "icon_weapon_bow",
+      "path": "icons/weapon_bow.png",
+      "size": 640,
+      "status": "NEEDS_WORK",
+      "notes": "bowstring and limbs misaligned; LCC 0.5669",
+      "metrics": {
+        "speckles_removed_final_pass": 0,
+        "phase1_lcc": 0.5669,
+        "phase1_components": 3,
+        "phase1_boundary_pct": 20.0
+      }
+    },
+    {
+      "id": "icon_weapon_staff",
+      "path": "icons/weapon_staff.png",
+      "size": 517,
+      "status": "NEEDS_WORK",
+      "notes": "orb reads detached from shaft; outline color drift",
+      "metrics": {
+        "speckles_removed_final_pass": 0,
+        "phase1_lcc": 0.9778,
+        "phase1_components": 3,
+        "phase1_boundary_pct": 16.07
+      }
+    },
+    {
+      "id": "icon_potion_health",
+      "path": "icons/potion_health.png",
+      "size": 467,
+      "status": "READY",
+      "notes": "v2 candidate c1 (lcc 0.857, score 1.0199) chosen over phase-1",
+      "metrics": {
+        "speckles_removed_final_pass": 0,
+        "phase1_lcc": 0.717,
+        "phase1_components": 4,
+        "phase1_boundary_pct": 27.78
+      }
+    },
+    {
+      "id": "icon_potion_mana",
+      "path": "icons/potion_mana.png",
+      "size": 528,
+      "status": "READY",
+      "notes": "single component, clean flask silhouette",
+      "metrics": {
+        "speckles_removed_final_pass": 0,
+        "phase1_lcc": 1.0,
+        "phase1_components": 1,
+        "phase1_boundary_pct": 19.23
+      }
+    },
+    {
+      "id": "icon_potion_stamina",
+      "path": "icons/potion_stamina.png",
+      "size": 521,
+      "status": "READY",
+      "notes": "clean flask; cork highlight reads",
+      "metrics": {
+        "speckles_removed_final_pass": 0,
+        "phase1_lcc": 0.9929,
+        "phase1_components": 2,
+        "phase1_boundary_pct": 28.17
+      }
+    },
+    {
+      "id": "icon_potion_gold",
+      "path": "icons/potion_gold.png",
+      "size": 672,
+      "status": "NEEDS_WORK",
+      "notes": "gold liquid lacks internal shading; reads as flat blob",
+      "metrics": {
+        "speckles_removed_final_pass": 0,
+        "phase1_lcc": 1.0,
+        "phase1_components": 1,
+        "phase1_boundary_pct": 24.14
+      }
+    },
+    {
+      "id": "icon_armor_helmet",
+      "path": "icons/armor_helmet.png",
+      "size": 698,
+      "status": "NEEDS_WORK",
+      "notes": "visor detail muddled; residual speckle risk around rim",
+      "metrics": {
+        "speckles_removed_final_pass": 0,
+        "phase1_lcc": 0.9843,
+        "phase1_components": 4,
+        "phase1_boundary_pct": 24.32
+      }
+    },
+    {
+      "id": "icon_armor_chest",
+      "path": "icons/armor_chest.png",
+      "size": 830,
+      "status": "READY",
+      "notes": "v2 candidate c0 (lcc 0.994, score 1.1652)",
+      "metrics": {
+        "speckles_removed_final_pass": 0,
+        "phase1_lcc": 0.8768,
+        "phase1_components": 12,
+        "phase1_boundary_pct": 21.94
+      }
+    },
+    {
+      "id": "icon_armor_shield",
+      "path": "icons/armor_shield.png",
+      "size": 1145,
+      "status": "READY",
+      "notes": "v2 candidate c1 (lcc 1.0, components 1, score 1.4167)",
+      "metrics": {
+        "speckles_removed_final_pass": 0,
+        "phase1_lcc": 0.5481,
+        "phase1_components": 13,
+        "phase1_boundary_pct": 18.6
+      }
+    },
+    {
+      "id": "icon_armor_boots",
+      "path": "icons/armor_boots.png",
+      "size": 626,
+      "status": "READY",
+      "notes": "single component, clean outline",
+      "metrics": {
+        "speckles_removed_final_pass": 0,
+        "phase1_lcc": 1.0,
+        "phase1_components": 1,
+        "phase1_boundary_pct": 24.59
+      }
+    },
+    {
+      "id": "icon_craft_ore",
+      "path": "icons/craft_ore.png",
+      "size": 617,
+      "status": "READY",
+      "notes": "ore nugget with highlights reads clearly",
+      "metrics": {
+        "speckles_removed_final_pass": 0,
+        "phase1_lcc": 0.9946,
+        "phase1_components": 2,
+        "phase1_boundary_pct": 16.0
+      }
+    },
+    {
+      "id": "icon_craft_gem",
+      "path": "icons/craft_gem.png",
+      "size": 744,
+      "status": "NEEDS_WORK",
+      "notes": "detached sparkle fragments (10 connected components, LCC 0.7436)",
+      "metrics": {
+        "speckles_removed_final_pass": 0,
+        "phase1_lcc": 0.7436,
+        "phase1_components": 10,
+        "phase1_boundary_pct": 30.0
+      }
+    },
+    {
+      "id": "icon_craft_scroll",
+      "path": "icons/craft_scroll.png",
+      "size": 914,
+      "status": "NEEDS_WORK",
+      "notes": "unrolled ends asymmetrical; 4 components",
+      "metrics": {
+        "speckles_removed_final_pass": 0,
+        "phase1_lcc": 0.9783,
+        "phase1_components": 4,
+        "phase1_boundary_pct": 18.35
+      }
+    },
+    {
+      "id": "icon_craft_feather",
+      "path": "icons/craft_feather.png",
+      "size": 454,
+      "status": "READY",
+      "notes": "v2 candidate c1 (lcc 0.984, score 1.2969)",
+      "metrics": {
+        "speckles_removed_final_pass": 0,
+        "phase1_lcc": 0.9933,
+        "phase1_components": 2,
+        "phase1_boundary_pct": 20.34
+      }
+    },
+    {
+      "id": "icon_atlas_4x4",
+      "path": "icons/atlas_4x4.png",
+      "size": 8736,
+      "status": "READY",
+      "notes": "4x4 atlas, cell order in metadata/atlas_icons.json",
+      "metrics": {}
+    },
+    {
+      "id": "knight_front",
+      "path": "characters/knight_front.png",
+      "size": 1619,
+      "status": "READY",
+      "notes": "v2 palette-remapped view; jaccard vs common palette 0.4103",
+      "metrics": {
+        "size_px": 64
+      }
+    },
+    {
+      "id": "knight_side",
+      "path": "characters/knight_side.png",
+      "size": 1721,
+      "status": "READY",
+      "notes": "v2 palette-remapped view; jaccard vs common palette 0.4103",
+      "metrics": {
+        "size_px": 64
+      }
+    },
+    {
+      "id": "knight_back",
+      "path": "characters/knight_back.png",
+      "size": 1278,
+      "status": "READY",
+      "notes": "v2 palette-remapped view; jaccard vs common palette 0.4103",
+      "metrics": {
+        "size_px": 64
+      }
+    },
+    {
+      "id": "knight_three_quarter",
+      "path": "characters/knight_three_quarter.png",
+      "size": 1407,
+      "status": "READY",
+      "notes": "v2 palette-remapped view; jaccard vs common palette 0.4103",
+      "metrics": {
+        "size_px": 64
+      }
+    },
+    {
+      "id": "knight_turntable",
+      "path": "characters/knight_turntable.gif",
+      "size": 2355,
+      "status": "READY",
+      "notes": "front->side->back->three_quarter, 600ms/frame",
+      "metrics": {}
+    },
+    {
+      "id": "knight_turntable_4x",
+      "path": "characters/knight_turntable_4x.gif",
+      "size": 10981,
+      "status": "READY",
+      "notes": "4x nearest-neighbor upscale",
+      "metrics": {}
+    },
+    {
+      "id": "knight_contact_sheet_4x",
+      "path": "characters/contact_sheet_4x.png",
+      "size": 10414,
+      "status": "READY",
+      "notes": "knights_v2_4x contact sheet",
+      "metrics": {}
+    },
+    {
+      "id": "knight_palette",
+      "path": "characters/knight_palette.hex",
+      "size": 312,
+      "status": "READY",
+      "notes": "39-color common knight palette",
+      "metrics": {}
+    },
+    {
+      "id": "anim_idle",
+      "path": "animations/knight_idle.png",
+      "size": 3213,
+      "status": "READY",
+      "notes": "registered sheet; OpenPose adherence partial; motion readability modest",
+      "metrics": {
+        "frame_count": 2,
+        "fps": 10,
+        "registration_dx_dy_per_frame": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            7
+          ]
+        ],
+        "post_baseline_spread": 0,
+        "post_centroid_spread": 0.04
+      }
+    },
+    {
+      "id": "anim_idle_gif_64",
+      "path": "animations/knight_idle_64.gif",
+      "size": 1449,
+      "status": "READY",
+      "notes": "64px, 10fps",
+      "metrics": {}
+    },
+    {
+      "id": "anim_idle_gif_256",
+      "path": "animations/knight_idle_256.gif",
+      "size": 6596,
+      "status": "READY",
+      "notes": "256px, 10fps",
+      "metrics": {}
+    },
+    {
+      "id": "anim_walk",
+      "path": "animations/knight_walk.png",
+      "size": 5685,
+      "status": "READY",
+      "notes": "registered sheet; OpenPose adherence partial; motion readability modest",
+      "metrics": {
+        "frame_count": 4,
+        "fps": 10,
+        "registration_dx_dy_per_frame": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "post_baseline_spread": 0,
+        "post_centroid_spread": 0.71
+      }
+    },
+    {
+      "id": "anim_walk_gif_64",
+      "path": "animations/knight_walk_64.gif",
+      "size": 2415,
+      "status": "READY",
+      "notes": "64px, 10fps",
+      "metrics": {}
+    },
+    {
+      "id": "anim_walk_gif_256",
+      "path": "animations/knight_walk_256.gif",
+      "size": 11350,
+      "status": "READY",
+      "notes": "256px, 10fps",
+      "metrics": {}
+    },
+    {
+      "id": "anim_attack",
+      "path": "animations/knight_attack.png",
+      "size": 4404,
+      "status": "READY",
+      "notes": "registered sheet; OpenPose adherence partial; motion readability modest",
+      "metrics": {
+        "frame_count": 3,
+        "fps": 10,
+        "registration_dx_dy_per_frame": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        "post_baseline_spread": 0,
+        "post_centroid_spread": 0.76
+      }
+    },
+    {
+      "id": "anim_attack_gif_64",
+      "path": "animations/knight_attack_64.gif",
+      "size": 1951,
+      "status": "READY",
+      "notes": "64px, 10fps",
+      "metrics": {}
+    },
+    {
+      "id": "anim_attack_gif_256",
+      "path": "animations/knight_attack_256.gif",
+      "size": 9139,
+      "status": "READY",
+      "notes": "256px, 10fps",
+      "metrics": {}
+    },
+    {
+      "id": "hd_mana_potion_256",
+      "path": "hd/hd_mana_potion_256.png",
+      "size": 55464,
+      "status": "READY",
+      "notes": "rekey clean",
+      "metrics": {
+        "removed_px": 34088,
+        "ring_opaque_before": 0.538,
+        "ring_opaque_after": 0.1004
+      }
+    },
+    {
+      "id": "hd_mana_potion_512",
+      "path": "hd/hd_mana_potion_512.png",
+      "size": 284988,
+      "status": "READY",
+      "notes": "rekey clean",
+      "metrics": {
+        "removed_px": 26238,
+        "ring_opaque_before": 0.0,
+        "ring_opaque_after": 0.0
+      }
+    },
+    {
+      "id": "hd_chest_256",
+      "path": "hd/hd_chest_256.png",
+      "size": 103630,
+      "status": "READY",
+      "notes": "rekey clean",
+      "metrics": {
+        "removed_px": 2354,
+        "ring_opaque_before": 0.2059,
+        "ring_opaque_after": 0.2054
+      }
+    },
+    {
+      "id": "hd_chest_512",
+      "path": "hd/hd_chest_512.png",
+      "size": 445916,
+      "status": "READY",
+      "notes": "green = its own paint, preserve",
+      "metrics": {
+        "removed_px": 290,
+        "ring_opaque_before": 0.0436,
+        "ring_opaque_after": 0.0396
+      }
+    },
+    {
+      "id": "hd_crystal_256",
+      "path": "hd/hd_crystal_256.png",
+      "size": 113148,
+      "status": "READY",
+      "notes": "rekey clean",
+      "metrics": {
+        "removed_px": 3071,
+        "ring_opaque_before": 0.3495,
+        "ring_opaque_after": 0.3262
+      }
+    },
+    {
+      "id": "hd_crystal_512",
+      "path": "hd/hd_crystal_512.png",
+      "size": 394177,
+      "status": "READY",
+      "notes": "minor purple/pink border shards remain \u2014 crop 2px or accept; recommend crop",
+      "metrics": {
+        "removed_px": 644,
+        "ring_opaque_before": 0.5761,
+        "ring_opaque_after": 0.5748
+      }
+    }
+  ]
+}

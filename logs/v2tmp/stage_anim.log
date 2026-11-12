@@ -1,0 +1,20 @@
+  v2_anim_idle_0_c0 (127.0s)
+[ram] swap 11345MB for >60s, waiting 30s
+  v2_anim_idle_1_c0 (14.2s)
+idle: pre baseline spread 7, post 0, jac [1.0, 0.0]
+[ram] swap 11414MB for >60s, waiting 30s
+  v2_anim_walk_0_c0 (120.0s)
+[ram] swap 8568MB for >60s, waiting 30s
+  v2_anim_walk_1_c0 (113.6s)
+[ram] swap 8297MB for >60s, waiting 30s
+  v2_anim_walk_2_c0 (108.7s)
+[ram] swap 8545MB for >60s, waiting 30s
+  v2_anim_walk_3_c0 (123.0s)
+walk: pre baseline spread 7, post 0, jac [1.0, 0.0, 0.0, 0.0323]
+[ram] swap 10331MB for >60s, waiting 30s
+  v2_anim_attack_0_c0 (118.0s)
+[ram] swap 9806MB for >60s, waiting 30s
+  v2_anim_attack_1_c0 (119.2s)
+[ram] swap 9615MB for >60s, waiting 30s
+  v2_anim_attack_2_c0 (115.9s)
+attack: pre baseline spread 6, post 0, jac [1.0, 0.0, 0.0]

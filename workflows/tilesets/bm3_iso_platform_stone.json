@@ -1,0 +1,162 @@
+{
+  "ckpt": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors"
+    }
+  },
+  "lightning_lora": {
+    "class_type": "LoraLoader",
+    "inputs": {
+      "lora_name": "sdxl_lightning_8step_lora.safetensors",
+      "strength_model": 1.0,
+      "strength_clip": 1.0,
+      "model": [
+        "ckpt",
+        0
+      ],
+      "clip": [
+        "ckpt",
+        1
+      ]
+    }
+  },
+  "pixel_lora": {
+    "class_type": "LoraLoader",
+    "inputs": {
+      "lora_name": "pixel-art-xl.safetensors",
+      "strength_model": 1.2,
+      "strength_clip": 1.0,
+      "model": [
+        "lightning_lora",
+        0
+      ],
+      "clip": [
+        "lightning_lora",
+        1
+      ]
+    }
+  },
+  "latent": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    }
+  },
+  "pos": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "pixel art, isometric stone temple platform, carved ancient grey cobblestone, modular video game block, clean pixel art, on a solid pure green background, isolated, centered, 16-bit sprite, clean pixel contours",
+      "clip": [
+        "pixel_lora",
+        1
+      ]
+    }
+  },
+  "neg": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "blurry, photographic, realistic, messy, noisy, gradient, complex background, shadow",
+      "clip": [
+        "pixel_lora",
+        1
+      ]
+    }
+  },
+  "sampler": {
+    "class_type": "KSampler",
+    "inputs": {
+      "seed": 302,
+      "steps": 8,
+      "cfg": 1.5,
+      "sampler_name": "euler",
+      "scheduler": "sgm_uniform",
+      "denoise": 1.0,
+      "model": [
+        "pixel_lora",
+        0
+      ],
+      "positive": [
+        "pos",
+        0
+      ],
+      "negative": [
+        "neg",
+        0
+      ],
+      "latent_image": [
+        "latent",
+        0
+      ]
+    }
+  },
+  "vae_decode": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "sampler",
+        0
+      ],
+      "vae": [
+        "ckpt",
+        2
+      ]
+    }
+  },
+  "bg_remove": {
+    "class_type": "SK_BackgroundRemove",
+    "inputs": {
+      "image": [
+        "vae_decode",
+        0
+      ],
+      "mode": "key_refine",
+      "remove_shadow": true,
+      "tolerance": 0.08,
+      "mask_threshold": 0.5,
+      "enabled": true
+    }
+  },
+  "pixel_perfect": {
+    "class_type": "SK_PixelPerfect",
+    "inputs": {
+      "image": [
+        "bg_remove",
+        0
+      ],
+      "mode": "fixed_size",
+      "width": 64,
+      "height": 64,
+      "scale": 16,
+      "method": "dominant",
+      "pre_colors": 48
+    }
+  },
+  "palette": {
+    "class_type": "SK_Palette",
+    "inputs": {
+      "image": [
+        "pixel_perfect",
+        0
+      ],
+      "source": "auto",
+      "colors": 16,
+      "preset": "PICO-8",
+      "dither": "none",
+      "dither_strength": 0.5,
+      "shared_palette": true
+    }
+  },
+  "save": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "bm3_iso_platform_stone",
+      "images": [
+        "palette",
+        0
+      ]
+    }
+  }
+}

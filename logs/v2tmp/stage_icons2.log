@@ -1,0 +1,24 @@
+  v2_icon_potion_health_c0 (52.7s)
+  v2_icon_potion_health_c1 (33.3s)
+potion_health: v2_icon_potion_health_c1.png lcc=0.8571 bc=0.1628, phase1 lcc=0.717 bc=0.2778, v2_icon_potion_health_c0.png lcc=0.6716 bc=0.1905
+[ram] swap 2855MB for >60s, waiting 30s
+  v2_icon_armor_shield_c0 (56.7s)
+[ram] swap 2892MB for >60s, waiting 30s
+  v2_icon_armor_shield_c1 (51.9s)
+armor_shield: v2_icon_armor_shield_c1.png lcc=1.0 bc=0.4167, v2_icon_armor_shield_c0.png lcc=1.0 bc=0.1667, phase1 lcc=0.5481 bc=0.186
+[ram] swap 3008MB for >60s, waiting 30s
+  v2_icon_craft_feather_c0 (49.9s)
+[ram] swap 6656MB for >60s, waiting 30s
+  v2_icon_craft_feather_c1 (36.3s)
+craft_feather: v2_icon_craft_feather_c1.png lcc=0.9844 bc=0.3125, phase1 lcc=0.9933 bc=0.2034, v2_icon_craft_feather_c0.png lcc=0.358 bc=0.1584
+[ram] swap 6682MB for >60s, waiting 30s
+  v2_icon_craft_gem_c0 (39.8s)
+[ram] swap 2944MB for >60s, waiting 30s
+  v2_icon_craft_gem_c1 (52.9s)
+craft_gem: phase-1 kept (v2 worse)
+craft_gem: phase1 lcc=0.7436 bc=0.3, v2_icon_craft_gem_c1.png lcc=0.5125 bc=0.1545, v2_icon_craft_gem_c0.png lcc=0.082 bc=0.1615
+[ram] swap 2930MB for >60s, waiting 30s
+  v2_icon_armor_chest_c0 (51.4s)
+[ram] swap 2848MB for >60s, waiting 30s
+  v2_icon_armor_chest_c1 (56.7s)
+armor_chest: v2_icon_armor_chest_c0.png lcc=0.9942 bc=0.1711, phase1 lcc=0.8768 bc=0.2194, v2_icon_armor_chest_c1.png lcc=0.7657 bc=0.2304

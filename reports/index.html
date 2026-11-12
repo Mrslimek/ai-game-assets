@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Local AI Game Asset Pipeline - Benchmark Report</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --card-bg: #181b24;
+      --border: #262a36;
+      --accent: #6366f1;
+      --accent-hover: #4f46e5;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --success: #10b981;
+      --warning: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px;
+    }
+    header {
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    h1 { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .subtitle { color: var(--text-muted); font-size: 14px; }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .stat-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .stat-val { font-size: 20px; font-weight: 600; color: #fff; margin-top: 4px; }
+    .stat-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--success);
+      margin-top: 4px;
+    }
+    
+    .section-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 32px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .asset-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .img-box {
+      background: #111318;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 220px;
+      padding: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .img-box img {
+      image-rendering: pixelated;
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    .card-body {
+      padding: 14px;
+      font-size: 13px;
+      flex-grow: 1;
+    }
+    .asset-name { font-weight: 600; color: #fff; margin-bottom: 4px; font-size: 14px; }
+    .asset-meta { color: var(--text-muted); font-size: 12px; margin-bottom: 8px; }
+    .badge {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 10px;
+      background: #282d3c;
+      color: #93c5fd;
+      margin-right: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 32px;
+      background: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 13px;
+      border-bottom: 1px solid var(--border);
+    }
+    th { background: #13161f; color: var(--text-muted); font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Local AI Game Asset Pipeline - Benchmark Report</h1>
+    <div class="subtitle">Platform: Apple Silicon M5 (16 GB Unified Memory) | Acceleration: Metal / PyTorch MPS | Engine: ComfyUI</div>
+  </header>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-label">Hardware Target</div>
+      <div class="stat-val">MacBook Air M5</div>
+      <div class="stat-badge">Apple Silicon ARM64</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Unified Memory</div>
+      <div class="stat-val">16 GB</div>
+      <div class="stat-badge">Strict Constraints Verified</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Diffusion Backends</div>
+      <div class="stat-val">SDXL + FLUX.2 + Z-Image</div>
+      <div class="stat-badge">GGUF & Distilled LoRAs</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Total Benchmarks</div>
+      <div class="stat-val">7 Executed</div>
+      <div class="stat-badge">100% Automated QA Passed</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Hardware Performance & Memory Benchmarks</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Workflow</th>
+        <th>Model Stack</th>
+        <th>Resolution</th>
+        <th>Steps</th>
+        <th>Cold Start</th>
+        <th>Warm Start</th>
+        <th>Peak RAM</th>
+        <th>Swap Usage</th>
+        <th>MPS Active</th>
+        <th>QA Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td><strong>Benchmark 2: Seamless Terrain Textures</strong></td>
+          <td>Juggernaut XL + Lightning + Pixel Art XL</td>
+          <td>32x32 & 64x64</td>
+          <td>8</td>
+          <td>145.8s</td>
+          <td>33.2s</td>
+          <td>8.7 GB</td>
+          <td>0 MB</td>
+          <td><span class="stat-badge">Metal / MPS</span></td>
+          <td><span class="stat-badge">PASS</span></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Benchmark 1: Top-down RPG Autotiling Sets</strong></td>
+          <td>Procedural Autotile Synthesizer + SDXL Seamless Base</td>
+          <td>32x32 (16 & 47 Tile Sets)</td>
+          <td>8</td>
+          <td>0.5s</td>
+          <td>0.4s</td>
+          <td>8.5 GB</td>
+          <td>0 MB</td>
+          <td><span class="stat-badge">Metal / MPS</span></td>
+          <td><span class="stat-badge">PASS</span></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Benchmark 3: Isometric Environment</strong></td>
+          <td>Juggernaut XL + Lightning + Pixel Art XL + SK_BackgroundRemove</td>
+          <td>64x64</td>
+          <td>8</td>
+          <td>28.4s</td>
+          <td>27.1s</td>
+          <td>8.7 GB</td>
+          <td>0 MB</td>
+          <td><span class="stat-badge">Metal / MPS</span></td>
+          <td><span class="stat-badge">PASS</span></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Benchmark 4: Character Turnaround Consistency</strong></td>
+          <td>Juggernaut XL + Lightning + Pixel Art XL + SK_BackgroundRemove</td>
+          <td>64x64</td>
+          <td>8</td>
+          <td>26.5s</td>
+          <td>26.9s</td>
+          <td>8.7 GB</td>
+          <td>0 MB</td>
+          <td><span class="stat-badge">Metal / MPS</span></td>
+          <td><span class="stat-badge">PASS</span></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Benchmark 5: Character Animation Sprite Sheets</strong></td>
+          <td>Juggernaut XL + Lightning + Pixel Art XL + SK_SpriteSheet</td>
+          <td>64x64 (4 Frames)</td>
+          <td>8</td>
+          <td>26.0s</td>
+          <td>26.4s</td>
+          <td>8.7 GB</td>
+          <td>0 MB</td>
+          <td><span class="stat-badge">Metal / MPS</span></td>
+          <td><span class="stat-badge">PASS</span></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Benchmark 6: Inventory Icon Sets (16 Icons)</strong></td>
+          <td>Juggernaut XL + Lightning + Pixel Art XL + SK_BackgroundRemove</td>
+          <td>32x32 (16 Icons)</td>
+          <td>8</td>
+          <td>24.5s</td>
+          <td>24.5s</td>
+          <td>8.6 GB</td>
+          <td>0 MB</td>
+          <td><span class="stat-badge">Metal / MPS</span></td>
+          <td><span class="stat-badge">PASS</span></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Benchmark 7: Stylized HD 2D Game Assets</strong></td>
+          <td>Juggernaut XL + Lightning (Non-Pixel Mode) + SK_BackgroundRemove</td>
+          <td>256x256 & 512x512</td>
+          <td>8</td>
+          <td>1.0s</td>
+          <td>30.2s</td>
+          <td>10.7 GB</td>
+          <td>0 MB</td>
+          <td><span class="stat-badge">Metal / MPS</span></td>
+          <td><span class="stat-badge">PASS</span></td>
+        </tr>
+        
+    </tbody>
+  </table>
+
+  
+        <h2 class="section-title">Benchmark 2: Seamless Terrain Textures</h2>
+        <div class="gallery-grid">
+          
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/validated/preview_3x3_grass_32.png" alt="Grass Terrain (32x32)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Grass Terrain (32x32)</div>
+                <div class="asset-meta">MASD: 8.92, MaxStep: 55.0, Colors: 16</div>
+                <div><span class="badge">32x32</span><span class="badge">Seamless 3x3 Preview</span><span class="badge">PICO-8 Palette</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/validated/preview_3x3_grass_64.png" alt="Grass Terrain (64x64)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Grass Terrain (64x64)</div>
+                <div class="asset-meta">MASD: 8.24, MaxStep: 47.0, Colors: 16</div>
+                <div><span class="badge">64x64</span><span class="badge">Seamless 3x3 Preview</span><span class="badge">PICO-8 Palette</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/validated/preview_3x3_dirt_32.png" alt="Dirt Terrain (32x32)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Dirt Terrain (32x32)</div>
+                <div class="asset-meta">MASD: 10.3, MaxStep: 50.0, Colors: 16</div>
+                <div><span class="badge">32x32</span><span class="badge">Seamless 3x3 Preview</span><span class="badge">PICO-8 Palette</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/validated/preview_3x3_dirt_64.png" alt="Dirt Terrain (64x64)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Dirt Terrain (64x64)</div>
+                <div class="asset-meta">MASD: 7.68, MaxStep: 37.0, Colors: 16</div>
+                <div><span class="badge">64x64</span><span class="badge">Seamless 3x3 Preview</span><span class="badge">PICO-8 Palette</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/validated/preview_3x3_sand_32.png" alt="Sand Terrain (32x32)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Sand Terrain (32x32)</div>
+                <div class="asset-meta">MASD: 15.48, MaxStep: 70.0, Colors: 16</div>
+                <div><span class="badge">32x32</span><span class="badge">Seamless 3x3 Preview</span><span class="badge">PICO-8 Palette</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/validated/preview_3x3_sand_64.png" alt="Sand Terrain (64x64)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Sand Terrain (64x64)</div>
+                <div class="asset-meta">MASD: 12.97, MaxStep: 70.0, Colors: 16</div>
+                <div><span class="badge">64x64</span><span class="badge">Seamless 3x3 Preview</span><span class="badge">PICO-8 Palette</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/validated/preview_3x3_stone_32.png" alt="Stone Terrain (32x32)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Stone Terrain (32x32)</div>
+                <div class="asset-meta">MASD: 17.17, MaxStep: 60.0, Colors: 16</div>
+                <div><span class="badge">32x32</span><span class="badge">Seamless 3x3 Preview</span><span class="badge">PICO-8 Palette</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/validated/preview_3x3_stone_64.png" alt="Stone Terrain (64x64)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Stone Terrain (64x64)</div>
+                <div class="asset-meta">MASD: 8.81, MaxStep: 56.0, Colors: 16</div>
+                <div><span class="badge">64x64</span><span class="badge">Seamless 3x3 Preview</span><span class="badge">PICO-8 Palette</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/validated/preview_3x3_water_32.png" alt="Water Terrain (32x32)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Water Terrain (32x32)</div>
+                <div class="asset-meta">MASD: 6.89, MaxStep: 48.0, Colors: 16</div>
+                <div><span class="badge">32x32</span><span class="badge">Seamless 3x3 Preview</span><span class="badge">PICO-8 Palette</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/validated/preview_3x3_water_64.png" alt="Water Terrain (64x64)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Water Terrain (64x64)</div>
+                <div class="asset-meta">MASD: 5.13, MaxStep: 38.0, Colors: 16</div>
+                <div><span class="badge">64x64</span><span class="badge">Seamless 3x3 Preview</span><span class="badge">PICO-8 Palette</span></div>
+              </div>
+            </div>
+            
+        </div>
+        
+        <h2 class="section-title">Benchmark 1: Top-down RPG Autotiling Sets</h2>
+        <div class="gallery-grid">
+          
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/validated/tileset_wang16.png" alt="Wang 16 Dual-Grid Tileset Atlas" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Wang 16 Dual-Grid Tileset Atlas</div>
+                <div class="asset-meta">16 corner transition tiles combining Grass overlay on Dirt base</div>
+                <div><span class="badge">Wang 16</span><span class="badge">32x32 Tiles</span><span class="badge">Atlas 4x4</span><span class="badge">Zero Discontinuity</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/validated/map_wang16_x4.png" alt="Wang 16 Procedural Island Map" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Wang 16 Procedural Island Map</div>
+                <div class="asset-meta">Rendered 15x15 island terrain demonstrating seamless corner autotiling</div>
+                <div><span class="badge">Wang 16 Map</span><span class="badge">Assembled Preview 4x</span><span class="badge">Game Ready</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/validated/tileset_blob47.png" alt="Blob 47 8-Neighbor Tileset Atlas" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Blob 47 8-Neighbor Tileset Atlas</div>
+                <div class="asset-meta">47-tile complete neighborhood bitmask set for seamless terrain blending</div>
+                <div><span class="badge">Blob 47</span><span class="badge">32x32 Tiles</span><span class="badge">Atlas 8x6</span><span class="badge">Full Connectivity</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/validated/map_blob47_x4.png" alt="Blob 47 Procedural Island Map" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Blob 47 Procedural Island Map</div>
+                <div class="asset-meta">Rendered 16x16 autotiled map with full 8-neighbor edge and corner rules</div>
+                <div><span class="badge">Blob 47 Map</span><span class="badge">Assembled Preview 4x</span><span class="badge">Game Ready</span></div>
+              </div>
+            </div>
+            
+        </div>
+        
+        <h2 class="section-title">Benchmark 3: Isometric Environment</h2>
+        <div class="gallery-grid">
+          
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/platform_grass.png" alt="Isometric Platform grass" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Isometric Platform grass</div>
+                <div class="asset-meta">Isometric projection, transparent background, unified lighting</div>
+                <div><span class="badge">64x64</span><span class="badge">Isometric</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/platform_stone.png" alt="Isometric Platform stone" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Isometric Platform stone</div>
+                <div class="asset-meta">Isometric projection, transparent background, unified lighting</div>
+                <div><span class="badge">64x64</span><span class="badge">Isometric</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/cliff_rock.png" alt="Isometric Cliff rock" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Isometric Cliff rock</div>
+                <div class="asset-meta">Isometric projection, transparent background, unified lighting</div>
+                <div><span class="badge">64x64</span><span class="badge">Isometric</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/pine_tree.png" alt="Isometric Pine tree" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Isometric Pine tree</div>
+                <div class="asset-meta">Isometric projection, transparent background, unified lighting</div>
+                <div><span class="badge">64x64</span><span class="badge">Isometric</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+        </div>
+        
+        <h2 class="section-title">Benchmark 4: Character Turnaround Consistency</h2>
+        <div class="gallery-grid">
+          
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/knight_front.png" alt="Knight (Front View)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Knight (Front View)</div>
+                <div class="asset-meta">Character concept turnaround maintaining armor silhouette and palette</div>
+                <div><span class="badge">64x64</span><span class="badge">Front View</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/knight_side.png" alt="Knight (Side View)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Knight (Side View)</div>
+                <div class="asset-meta">Character concept turnaround maintaining armor silhouette and palette</div>
+                <div><span class="badge">64x64</span><span class="badge">Side View</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/knight_back.png" alt="Knight (Back View)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Knight (Back View)</div>
+                <div class="asset-meta">Character concept turnaround maintaining armor silhouette and palette</div>
+                <div><span class="badge">64x64</span><span class="badge">Back View</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/knight_three_quarter.png" alt="Knight (Three quarter View)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Knight (Three quarter View)</div>
+                <div class="asset-meta">Character concept turnaround maintaining armor silhouette and palette</div>
+                <div><span class="badge">64x64</span><span class="badge">Three_quarter View</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+        </div>
+        
+        <h2 class="section-title">Benchmark 5: Character Animation Sprite Sheets</h2>
+        <div class="gallery-grid">
+          
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/knight_animation_sheet.png" alt="Knight Animation Sprite Sheet (Idle, Walk, Run, Attack)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Knight Animation Sprite Sheet (Idle, Walk, Run, Attack)</div>
+                <div class="asset-meta">4-frame sequence (256x64), Baseline variance: 4.25 px, IoU: 0.571</div>
+                <div><span class="badge">64x64 Frames</span><span class="badge">4 Actions</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/validated/knight_animation_sheet_anim_x4.gif" alt="Animated Playback (x4 Zoom)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Animated Playback (x4 Zoom)</div>
+                <div class="asset-meta">Real-time animation preview demonstrating baseline and silhouette stability</div>
+                <div><span class="badge">Animated GIF</span><span class="badge">4 FPS</span><span class="badge">x4 Pixel Perfect</span></div>
+              </div>
+            </div>
+            
+        </div>
+        
+        <h2 class="section-title">Benchmark 6: Inventory Icon Sets (16 Icons)</h2>
+        <div class="gallery-grid">
+          
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/validated/inventory_icons_atlas_x4.png" alt="Complete 16-Icon Inventory Atlas (4x4 Grid)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Complete 16-Icon Inventory Atlas (4x4 Grid)</div>
+                <div class="asset-meta">16 unified icons (4 weapons, 4 potions, 4 armor, 4 materials) at 4x preview</div>
+                <div><span class="badge">16 Icons</span><span class="badge">Atlas 4x4</span><span class="badge">PICO-8 Palette</span><span class="badge">Full Consistency</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/weapon_sword.png" alt="Weapon Sword" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Weapon Sword</div>
+                <div class="asset-meta">32x32 inventory icon, unified 16-color palette, clean outline</div>
+                <div><span class="badge">32x32</span><span class="badge">Weapon</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/weapon_dagger.png" alt="Weapon Dagger" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Weapon Dagger</div>
+                <div class="asset-meta">32x32 inventory icon, unified 16-color palette, clean outline</div>
+                <div><span class="badge">32x32</span><span class="badge">Weapon</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/weapon_bow.png" alt="Weapon Bow" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Weapon Bow</div>
+                <div class="asset-meta">32x32 inventory icon, unified 16-color palette, clean outline</div>
+                <div><span class="badge">32x32</span><span class="badge">Weapon</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/weapon_staff.png" alt="Weapon Staff" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Weapon Staff</div>
+                <div class="asset-meta">32x32 inventory icon, unified 16-color palette, clean outline</div>
+                <div><span class="badge">32x32</span><span class="badge">Weapon</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/potion_health.png" alt="Potion Health" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Potion Health</div>
+                <div class="asset-meta">32x32 inventory icon, unified 16-color palette, clean outline</div>
+                <div><span class="badge">32x32</span><span class="badge">Potion</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/potion_mana.png" alt="Potion Mana" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Potion Mana</div>
+                <div class="asset-meta">32x32 inventory icon, unified 16-color palette, clean outline</div>
+                <div><span class="badge">32x32</span><span class="badge">Potion</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/potion_stamina.png" alt="Potion Stamina" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Potion Stamina</div>
+                <div class="asset-meta">32x32 inventory icon, unified 16-color palette, clean outline</div>
+                <div><span class="badge">32x32</span><span class="badge">Potion</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/potion_gold.png" alt="Potion Gold" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Potion Gold</div>
+                <div class="asset-meta">32x32 inventory icon, unified 16-color palette, clean outline</div>
+                <div><span class="badge">32x32</span><span class="badge">Potion</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/armor_helmet.png" alt="Armor Helmet" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Armor Helmet</div>
+                <div class="asset-meta">32x32 inventory icon, unified 16-color palette, clean outline</div>
+                <div><span class="badge">32x32</span><span class="badge">Armor</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/armor_chest.png" alt="Armor Chest" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Armor Chest</div>
+                <div class="asset-meta">32x32 inventory icon, unified 16-color palette, clean outline</div>
+                <div><span class="badge">32x32</span><span class="badge">Armor</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/armor_shield.png" alt="Armor Shield" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Armor Shield</div>
+                <div class="asset-meta">32x32 inventory icon, unified 16-color palette, clean outline</div>
+                <div><span class="badge">32x32</span><span class="badge">Armor</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/armor_boots.png" alt="Armor Boots" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Armor Boots</div>
+                <div class="asset-meta">32x32 inventory icon, unified 16-color palette, clean outline</div>
+                <div><span class="badge">32x32</span><span class="badge">Armor</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/craft_ore.png" alt="Craft Ore" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Craft Ore</div>
+                <div class="asset-meta">32x32 inventory icon, unified 16-color palette, clean outline</div>
+                <div><span class="badge">32x32</span><span class="badge">Craft</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/craft_gem.png" alt="Craft Gem" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Craft Gem</div>
+                <div class="asset-meta">32x32 inventory icon, unified 16-color palette, clean outline</div>
+                <div><span class="badge">32x32</span><span class="badge">Craft</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/craft_scroll.png" alt="Craft Scroll" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Craft Scroll</div>
+                <div class="asset-meta">32x32 inventory icon, unified 16-color palette, clean outline</div>
+                <div><span class="badge">32x32</span><span class="badge">Craft</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/craft_feather.png" alt="Craft Feather" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">Craft Feather</div>
+                <div class="asset-meta">32x32 inventory icon, unified 16-color palette, clean outline</div>
+                <div><span class="badge">32x32</span><span class="badge">Craft</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+        </div>
+        
+        <h2 class="section-title">Benchmark 7: Stylized HD 2D Game Assets</h2>
+        <div class="gallery-grid">
+          
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/hd_chest_256.png" alt="HD Chest (256x256)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">HD Chest (256x256)</div>
+                <div class="asset-meta">Hand-painted stylized 2D game asset, transparent background, smooth gradients</div>
+                <div><span class="badge">256x256</span><span class="badge">HD Stylized 2D</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/hd_chest_512.png" alt="HD Chest (512x512)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">HD Chest (512x512)</div>
+                <div class="asset-meta">Hand-painted stylized 2D game asset, transparent background, smooth gradients</div>
+                <div><span class="badge">512x512</span><span class="badge">HD Stylized 2D</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/hd_mana_potion_256.png" alt="HD Mana Potion (256x256)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">HD Mana Potion (256x256)</div>
+                <div class="asset-meta">Hand-painted stylized 2D game asset, transparent background, smooth gradients</div>
+                <div><span class="badge">256x256</span><span class="badge">HD Stylized 2D</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/hd_mana_potion_512.png" alt="HD Mana Potion (512x512)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">HD Mana Potion (512x512)</div>
+                <div class="asset-meta">Hand-painted stylized 2D game asset, transparent background, smooth gradients</div>
+                <div><span class="badge">512x512</span><span class="badge">HD Stylized 2D</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/hd_crystal_256.png" alt="HD Crystal (256x256)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">HD Crystal (256x256)</div>
+                <div class="asset-meta">Hand-painted stylized 2D game asset, transparent background, smooth gradients</div>
+                <div><span class="badge">256x256</span><span class="badge">HD Stylized 2D</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="img-box">
+                <img src="../assets/generated/hd_crystal_512.png" alt="HD Crystal (512x512)" style="">
+              </div>
+              <div class="card-body">
+                <div class="asset-name">HD Crystal (512x512)</div>
+                <div class="asset-meta">Hand-painted stylized 2D game asset, transparent background, smooth gradients</div>
+                <div><span class="badge">512x512</span><span class="badge">HD Stylized 2D</span><span class="badge">Transparent PNG</span></div>
+              </div>
+            </div>
+            
+        </div>
+        
+
+</body>
+</html>

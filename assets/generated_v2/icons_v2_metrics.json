@@ -1,0 +1,141 @@
+{
+  "icons": {
+    "potion_health": [
+      {
+        "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_icon_potion_health_c1.png",
+        "tag": "v2_icon_potion_health_c1.png",
+        "lcc": 0.8571,
+        "components": 3,
+        "boundary_consistency": 0.1628,
+        "score": 1.0199
+      },
+      {
+        "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/potion_health.png",
+        "tag": "phase1",
+        "lcc": 0.717,
+        "components": 4,
+        "boundary_consistency": 0.2778,
+        "score": 0.9948
+      },
+      {
+        "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_icon_potion_health_c0.png",
+        "tag": "v2_icon_potion_health_c0.png",
+        "lcc": 0.6716,
+        "components": 7,
+        "boundary_consistency": 0.1905,
+        "score": 0.8621
+      }
+    ],
+    "armor_shield": [
+      {
+        "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_icon_armor_shield_c1.png",
+        "tag": "v2_icon_armor_shield_c1.png",
+        "lcc": 1.0,
+        "components": 1,
+        "boundary_consistency": 0.4167,
+        "score": 1.4167
+      },
+      {
+        "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_icon_armor_shield_c0.png",
+        "tag": "v2_icon_armor_shield_c0.png",
+        "lcc": 1.0,
+        "components": 1,
+        "boundary_consistency": 0.1667,
+        "score": 1.1667
+      },
+      {
+        "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/armor_shield.png",
+        "tag": "phase1",
+        "lcc": 0.5481,
+        "components": 13,
+        "boundary_consistency": 0.186,
+        "score": 0.7341
+      }
+    ],
+    "craft_feather": [
+      {
+        "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_icon_craft_feather_c1.png",
+        "tag": "v2_icon_craft_feather_c1.png",
+        "lcc": 0.9844,
+        "components": 2,
+        "boundary_consistency": 0.3125,
+        "score": 1.2969
+      },
+      {
+        "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/craft_feather.png",
+        "tag": "phase1",
+        "lcc": 0.9933,
+        "components": 2,
+        "boundary_consistency": 0.2034,
+        "score": 1.1967
+      },
+      {
+        "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_icon_craft_feather_c0.png",
+        "tag": "v2_icon_craft_feather_c0.png",
+        "lcc": 0.358,
+        "components": 3,
+        "boundary_consistency": 0.1584,
+        "score": 0.5164
+      }
+    ],
+    "craft_gem": [
+      {
+        "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/craft_gem.png",
+        "tag": "phase1",
+        "lcc": 0.7436,
+        "components": 10,
+        "boundary_consistency": 0.3,
+        "score": 1.0436
+      },
+      {
+        "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_icon_craft_gem_c1.png",
+        "tag": "v2_icon_craft_gem_c1.png",
+        "lcc": 0.5125,
+        "components": 7,
+        "boundary_consistency": 0.1545,
+        "score": 0.667
+      },
+      {
+        "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_icon_craft_gem_c0.png",
+        "tag": "v2_icon_craft_gem_c0.png",
+        "lcc": 0.082,
+        "components": 41,
+        "boundary_consistency": 0.1615,
+        "score": 0.2435
+      }
+    ],
+    "armor_chest": [
+      {
+        "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_icon_armor_chest_c0.png",
+        "tag": "v2_icon_armor_chest_c0.png",
+        "lcc": 0.9942,
+        "components": 2,
+        "boundary_consistency": 0.1711,
+        "score": 1.1652
+      },
+      {
+        "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/armor_chest.png",
+        "tag": "phase1",
+        "lcc": 0.8768,
+        "components": 12,
+        "boundary_consistency": 0.2194,
+        "score": 1.0961
+      },
+      {
+        "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_icon_armor_chest_c1.png",
+        "tag": "v2_icon_armor_chest_c1.png",
+        "lcc": 0.7657,
+        "components": 14,
+        "boundary_consistency": 0.2304,
+        "score": 0.9961
+      }
+    ]
+  },
+  "chosen": {
+    "potion_health": "v2_icon_potion_health_c1.png",
+    "armor_shield": "v2_icon_armor_shield_c1.png",
+    "craft_feather": "v2_icon_craft_feather_c1.png",
+    "craft_gem": "craft_gem.png",
+    "armor_chest": "v2_icon_armor_chest_c0.png"
+  }
+}

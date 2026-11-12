@@ -1,0 +1,235 @@
+{
+  "tiles": {
+    "sand_32": {
+      "candidates": [
+        {
+          "file": "sand_32_c0.png",
+          "size": 32,
+          "avg_row_seam": 29.1458,
+          "avg_col_seam": 10.0729,
+          "autoperiod_x": 12,
+          "autoperiod_y": 4,
+          "autoperiod_strength": 0.3109,
+          "edge_density_mean": 104.7052,
+          "edge_density_cv": 0.5069,
+          "luminance_drift": 3.9591,
+          "palette_size": 16,
+          "verdict_flags": [
+            "seam_suspect",
+            "density_uneven"
+          ]
+        },
+        {
+          "file": "sand_32_c1.png",
+          "size": 32,
+          "avg_row_seam": 30.9583,
+          "avg_col_seam": 14.8229,
+          "autoperiod_x": 11,
+          "autoperiod_y": 15,
+          "autoperiod_strength": 0.3027,
+          "edge_density_mean": 93.4304,
+          "edge_density_cv": 0.5461,
+          "luminance_drift": 3.94,
+          "palette_size": 16,
+          "verdict_flags": [
+            "seam_suspect",
+            "density_uneven"
+          ]
+        }
+      ],
+      "phase1": {
+        "file": "sand_32.png",
+        "size": 32,
+        "avg_row_seam": 20.6979,
+        "avg_col_seam": 10.2708,
+        "autoperiod_x": 2,
+        "autoperiod_y": 5,
+        "autoperiod_strength": 0.2698,
+        "edge_density_mean": 91.165,
+        "edge_density_cv": 0.6036,
+        "luminance_drift": 1.6554,
+        "palette_size": 16,
+        "verdict_flags": [
+          "seam_suspect",
+          "density_uneven"
+        ]
+      },
+      "kept": "phase1",
+      "seam_before": 30.9687,
+      "seam_after": 30.9687
+    },
+    "sand_64": {
+      "candidates": [
+        {
+          "file": "sand_64_c0.png",
+          "size": 64,
+          "avg_row_seam": 26.3646,
+          "avg_col_seam": 7.2917,
+          "autoperiod_x": 2,
+          "autoperiod_y": 15,
+          "autoperiod_strength": 0.4314,
+          "edge_density_mean": 88.1607,
+          "edge_density_cv": 0.6372,
+          "luminance_drift": 1.1824,
+          "palette_size": 16,
+          "verdict_flags": [
+            "seam_suspect",
+            "density_uneven"
+          ]
+        },
+        {
+          "file": "sand_64_c1.png",
+          "size": 64,
+          "avg_row_seam": 41.9427,
+          "avg_col_seam": 8.8542,
+          "autoperiod_x": 2,
+          "autoperiod_y": 9,
+          "autoperiod_strength": 0.447,
+          "edge_density_mean": 86.2767,
+          "edge_density_cv": 0.6632,
+          "luminance_drift": 4.9879,
+          "palette_size": 16,
+          "verdict_flags": [
+            "seam_suspect",
+            "density_uneven"
+          ]
+        }
+      ],
+      "phase1": {
+        "file": "sand_64.png",
+        "size": 64,
+        "avg_row_seam": 18.5781,
+        "avg_col_seam": 7.3698,
+        "autoperiod_x": 2,
+        "autoperiod_y": 30,
+        "autoperiod_strength": 0.5979,
+        "edge_density_mean": 88.7063,
+        "edge_density_cv": 0.6274,
+        "luminance_drift": 2.0911,
+        "palette_size": 16,
+        "verdict_flags": [
+          "seam_suspect",
+          "density_uneven"
+        ]
+      },
+      "kept": "phase1",
+      "seam_before": 25.9479,
+      "seam_after": 25.9479
+    },
+    "stone_32": {
+      "candidates": [
+        {
+          "file": "stone_32_c0.png",
+          "size": 32,
+          "avg_row_seam": 26.1979,
+          "avg_col_seam": 9.9896,
+          "autoperiod_x": 9,
+          "autoperiod_y": 16,
+          "autoperiod_strength": 0.2998,
+          "edge_density_mean": 89.216,
+          "edge_density_cv": 0.5046,
+          "luminance_drift": 3.1507,
+          "palette_size": 16,
+          "verdict_flags": [
+            "seam_suspect",
+            "density_uneven"
+          ]
+        },
+        {
+          "file": "stone_32_c1.png",
+          "size": 32,
+          "avg_row_seam": 28.7812,
+          "avg_col_seam": 13.8438,
+          "autoperiod_x": 9,
+          "autoperiod_y": 16,
+          "autoperiod_strength": 0.3054,
+          "edge_density_mean": 86.9564,
+          "edge_density_cv": 0.498,
+          "luminance_drift": 3.8348,
+          "palette_size": 16,
+          "verdict_flags": [
+            "seam_suspect"
+          ]
+        }
+      ],
+      "phase1": {
+        "file": "stone_32.png",
+        "size": 32,
+        "avg_row_seam": 17.4688,
+        "avg_col_seam": 16.875,
+        "autoperiod_x": 4,
+        "autoperiod_y": 14,
+        "autoperiod_strength": 0.1891,
+        "edge_density_mean": 79.5458,
+        "edge_density_cv": 0.529,
+        "luminance_drift": 2.8497,
+        "palette_size": 16,
+        "verdict_flags": [
+          "seam_suspect",
+          "density_uneven"
+        ]
+      },
+      "kept": "phase1",
+      "seam_before": 34.3438,
+      "seam_after": 34.3438
+    },
+    "stone_64": {
+      "candidates": [
+        {
+          "file": "stone_64_c0.png",
+          "size": 64,
+          "avg_row_seam": 12.8177,
+          "avg_col_seam": 6.3281,
+          "autoperiod_x": 2,
+          "autoperiod_y": 32,
+          "autoperiod_strength": 0.458,
+          "edge_density_mean": 91.4794,
+          "edge_density_cv": 0.5275,
+          "luminance_drift": 2.6632,
+          "palette_size": 16,
+          "verdict_flags": [
+            "seam_suspect",
+            "density_uneven"
+          ]
+        },
+        {
+          "file": "stone_64_c1.png",
+          "size": 64,
+          "avg_row_seam": 33.5781,
+          "avg_col_seam": 5.2656,
+          "autoperiod_x": 2,
+          "autoperiod_y": 7,
+          "autoperiod_strength": 0.469,
+          "edge_density_mean": 77.1071,
+          "edge_density_cv": 0.6258,
+          "luminance_drift": 3.1142,
+          "palette_size": 16,
+          "verdict_flags": [
+            "seam_suspect",
+            "density_uneven"
+          ]
+        }
+      ],
+      "phase1": {
+        "file": "stone_64.png",
+        "size": 64,
+        "avg_row_seam": 12.7083,
+        "avg_col_seam": 4.9115,
+        "autoperiod_x": 2,
+        "autoperiod_y": 28,
+        "autoperiod_strength": 0.4081,
+        "edge_density_mean": 79.8029,
+        "edge_density_cv": 0.512,
+        "luminance_drift": 3.0297,
+        "palette_size": 16,
+        "verdict_flags": [
+          "seam_suspect",
+          "density_uneven"
+        ]
+      },
+      "kept": "phase1",
+      "seam_before": 17.6198,
+      "seam_after": 17.6198
+    }
+  }
+}

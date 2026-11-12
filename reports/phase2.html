@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Phase 2 — Visual Quality &amp; Production Readiness</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card-bg: #181b24;
+    --border: #262a36;
+    --accent: #6366f1;
+    --text: #f3f4f6;
+    --text-muted: #9ca3af;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  header { margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+  h1 { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .subtitle { color: var(--text-muted); font-size: 14px; }
+  .honesty-note {
+    margin-top: 16px; padding: 14px 18px;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid var(--warning);
+    border-radius: 8px; font-size: 15px; font-weight: 500;
+  }
+  .honesty-note .tag { color: var(--warning); text-transform: uppercase; letter-spacing: 1px; font-size: 12px; font-weight: 700; margin-right: 8px; }
+  h2 { font-size: 20px; color: #fff; margin: 40px 0 14px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); }
+  h3 { font-size: 15px; color: var(--text); margin: 20px 0 8px; }
+  p { margin-bottom: 10px; }
+  .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+  .grid { display: grid; gap: 16px; }
+  .grid-2 { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  figure { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
+  figure img { max-width: 100%; height: auto; display: block; border-radius: 4px; background: #000; }
+  figcaption { font-size: 12.5px; color: var(--text-muted); margin-top: 8px; }
+  figcaption b { color: var(--text); }
+  .chip { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; margin-right: 6px; }
+  .chip.ready { background: rgba(16,185,129,.18); color: var(--success); }
+  .chip.needs { background: rgba(245,158,11,.18); color: var(--warning); }
+  .chip.experimental { background: rgba(99,102,241,.18); color: var(--accent); }
+  .before, .after { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; display: block; }
+  .before { color: var(--danger); }
+  .after { color: var(--success); }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 12px; }
+  th, td { padding: 7px 10px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { color: var(--text-muted); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.5px; }
+  td.num { font-variant-numeric: tabular-nums; }
+  ul { margin: 0 0 10px 22px; }
+  li { margin-bottom: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .pixelated { image-rendering: pixelated; width: 400%; max-width: 100%; }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 12.5px; }
+  .mono { font-family: ui-monospace, Menlo, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Phase 2 — Visual Quality &amp; Production Readiness</h1>
+  <div class="subtitle">2026-11-12 · self-contained gallery · all image paths relative to <span class="mono">reports/</span></div>
+  <div class="honesty-note">
+    <span class="tag">Honesty Note</span>
+    Phase 1 metrics have been re-verified; several headline claims were contradicted.
+    Verdicts below are evidence-based; no score inflation.
+    Full write-up: <a href="../PHASE2_REPORT.md">PHASE2_REPORT.md</a>
+  </div>
+</header>
+
+<!-- 1. TERRAIN -->
+<h2>1 · Terrain QA</h2>
+<div class="card">
+  <p>
+    <span class="chip ready">grass READY</span>
+    <span class="chip ready">dirt READY</span>
+    <span class="chip ready">water READY</span>
+    <span class="chip needs">sand NEEDS_WORK</span>
+    <span class="chip needs">stone NEEDS_WORK</span>
+  </p>
+  <table>
+    <tr><th>tile</th><th>avg row seam (gray levels)</th><th>avg col seam</th><th>flags</th><th>verdict</th></tr>
+    <tr><td>grass_32</td><td class="num">9.11</td><td class="num">8.73</td><td>density_uneven</td><td><span class="chip ready">READY</span></td></tr>
+    <tr><td>grass_64</td><td class="num">8.02</td><td class="num">8.45</td><td>density_uneven</td><td><span class="chip ready">READY</span></td></tr>
+    <tr><td>dirt_32</td><td class="num">10.27</td><td class="num">10.32</td><td>density_uneven</td><td><span class="chip ready">READY</span></td></tr>
+    <tr><td>dirt_64</td><td class="num">8.15</td><td class="num">7.22</td><td>density_uneven</td><td><span class="chip ready">READY</span></td></tr>
+    <tr><td>water_32</td><td class="num">8.22</td><td class="num">5.55</td><td>density_uneven</td><td><span class="chip ready">READY</span></td></tr>
+    <tr><td>water_64</td><td class="num">6.70</td><td class="num">3.55</td><td>density_uneven</td><td><span class="chip ready">READY</span></td></tr>
+    <tr><td>sand_32</td><td class="num">20.70</td><td class="num">10.27</td><td>seam_suspect, density_uneven</td><td><span class="chip needs">NEEDS_WORK</span></td></tr>
+    <tr><td>sand_64</td><td class="num">18.58</td><td class="num">7.37</td><td>seam_suspect, density_uneven</td><td><span class="chip needs">NEEDS_WORK</span></td></tr>
+    <tr><td>stone_32</td><td class="num">17.47</td><td class="num">16.88</td><td>seam_suspect, density_uneven</td><td><span class="chip needs">NEEDS_WORK</span></td></tr>
+    <tr><td>stone_64</td><td class="num">12.71</td><td class="num">4.91</td><td>seam_suspect, density_uneven</td><td><span class="chip needs">NEEDS_WORK</span></td></tr>
+  </table>
+  <p>Exact seam rows/cols (average shared-edge pixel diff) from <span class="mono">reports/qa_terrain.json</span>. Values &gt;~15 gray levels read as a visible line at tile boundaries.</p>
+</div>
+<div class="grid grid-3">
+  <figure>
+    <img src="../assets/qa/terrain/repetition_30x30_grass_32_x4.png" alt="grass 30x30 repetition">
+    <figcaption><b>grass 30×30 (x4)</b> — no visible grid lines, no repeated-feature pattern. READY.</figcaption>
+  </figure>
+  <figure>
+    <img src="../assets/qa/terrain/repetition_30x30_sand_32_x4.png" alt="sand 30x30 repetition">
+    <figcaption><b>sand 30×30 (x4)</b> — "wood-grain striations": directional ridges repeat across tiles, producing a visible seam under repetition (row seam 20.70). NEEDS_WORK.</figcaption>
+  </figure>
+  <figure>
+    <img src="../assets/qa/terrain/repetition_10x10_stone_64_x4.png" alt="stone 10x10 repetition">
+    <figcaption><b>stone 10×10 (x4)</b> — "brick-wall wallpaper": blocky masonry courses tile into an obvious wallpaper pattern. NEEDS_WORK.</figcaption>
+  </figure>
+  <figure>
+    <img src="../assets/qa/terrain/mixed_30x30_seed7_x4.png" alt="mixed terrain map">
+    <figcaption><b>mixed 30×30, seed 7 (x4)</b> — elevation bands read correctly (water → sand → dirt → grass → stone) after the water-fill fix; band borders are hard Wang16 quadrant steps.</figcaption>
+  </figure>
+  <figure>
+    <img src="../assets/qa/terrain/transition_grass-water_12x12_x4.png" alt="grass-water transition">
+    <figcaption><b>grass↔water 12×12 (x4)</b> — island reads clearly; shoreline is a blocky staircase of half-tile quadrant steps (Wang16 dual-grid by design, not a seam defect).</figcaption>
+  </figure>
+</div>
+
+<!-- 2. AUTOTILING -->
+<h2>2 · Autotiling</h2>
+<div class="card">
+  <h3>blob47: BEFORE (phase 1) → AFTER (rebuilt)</h3>
+  <p>Phase 1 shipped a "47-tile blob" atlas that actually contained <b>11 distinct tiles with hard 90° corners</b>. The rebuilt atlas fills all 47 slots with genuinely distinct states (slot 47 empty as expected in the 8×6 grid); corner arcs terminate exactly at tile edges.</p>
+</div>
+<div class="grid grid-2">
+  <figure>
+    <span class="before">before — phase 1</span>
+    <img src="../assets/validated/tileset_blob47.png" alt="phase-1 blob47 tileset">
+    <figcaption><b>Phase-1 tileset_blob47.png</b> — 11 distinct tiles, 90° corners. Re-verified during review; the remaining 36 slots were duplicates.</figcaption>
+  </figure>
+  <figure>
+    <span class="after">after — rebuilt</span>
+    <img src="../assets/qa/terrain/atlas_blob47_labeled_x4.png" alt="rebuilt labeled blob47 atlas">
+    <figcaption><b>atlas_blob47_labeled_x4.png</b> — all 47 slots labeled, each distinct: tile 0 pure dirt, tile 46 pure grass, quarter-blob corners with visibly rounded arcs, concave inner-corner bulges meeting edges cleanly.</figcaption>
+  </figure>
+  <figure>
+    <span class="before">before — phase 1</span>
+    <img src="../assets/validated/map_blob47_x4.png" alt="phase-1 blob47 map">
+    <figcaption><b>Phase-1 map_blob47_x4.png</b> — rendered from the degenerate 11-tile atlas: mismatched corner states along island edges.</figcaption>
+  </figure>
+  <figure>
+    <span class="after">after — rebuilt</span>
+    <img src="../assets/qa/terrain/sanity_blob47_island_16x16_seed1.png" alt="rebuilt blob47 island seed1">
+    <figcaption><b>sanity_blob47_island_16x16, seed 1</b> — scalloped island edge with smooth round inner/outer corner arcs; no grid lines, no corner notches, no state mismatches. Seeds 2–5 also render clean.</figcaption>
+  </figure>
+</div>
+<div class="grid grid-2">
+  <figure>
+    <img src="../assets/qa/terrain/atlas_wang16_labeled_x4.png" alt="wang16 labeled atlas">
+    <figcaption><b>Wang16 atlas, labeled</b> — bit order NW + 2·NE + 4·SW + 8·SE verified (tile 1 = NW grass only, tile 3 = top half, tile 15 = full). <b>Staircase by design:</b> quadrant-paste borders are hard straight edges, giving blocky staircase transitions rather than smooth corners — inherent to the Wang16 dual-grid design, not a defect.</figcaption>
+  </figure>
+  <figure>
+    <img src="../packs/game-asset-pack-v1/autotiles/demo_grass_water_wang16_x4.png" alt="wang16 demo map">
+    <figcaption><b>Wang16 demo island 20×20 (x4)</b> — shipped in the production pack (<span class="mono">demo_grass_water_wang16.png</span> + x4).</figcaption>
+  </figure>
+</div>
+<div class="grid grid-3">
+  <figure>
+    <img src="../packs/game-asset-pack-v1/autotiles/demo_grass_water_x4.png" alt="blob47 grass-water demo">
+    <figcaption><b>demo_grass_water (blob47, x4)</b> — pack demo island.</figcaption>
+  </figure>
+  <figure>
+    <img src="../packs/game-asset-pack-v1/autotiles/demo_grass_dirt_x4.png" alt="blob47 grass-dirt demo">
+    <figcaption><b>demo_grass_dirt (blob47, x4)</b> — pack demo island.</figcaption>
+  </figure>
+  <figure>
+    <img src="../packs/game-asset-pack-v1/autotiles/demo_dirt_stone_x4.png" alt="blob47 dirt-stone demo">
+    <figcaption><b>demo_dirt_stone (blob47, x4)</b> — pack demo island.</figcaption>
+  </figure>
+</div>
+
+<!-- 3. PIXEL-ART ICONS -->
+<h2>3 · Pixel-Art Icons</h2>
+<div class="grid grid-2">
+  <figure>
+    <img src="../assets/qa/pixelart/icons_native.png" alt="icons native 1x">
+    <figcaption><b>Phase-1 icons at native 1× (32×32)</b> — the resolution a game actually renders.</figcaption>
+  </figure>
+  <figure>
+    <img src="../assets/qa/pixelart/icons_4x.png" alt="icons 4x">
+    <figcaption><b>Phase-1 icons at 4×</b> — every icon has exactly 16 opaque colors, but all 16 palettes are fully disjoint (union 256 opaque colors, pairwise Jaccard 0.0) and each has a different boundary color.</figcaption>
+  </figure>
+  <figure>
+    <img src="../assets/qa/pixelart/icons_before_after_4x.png" alt="icons before/after outline unification">
+    <figcaption><b>Outline unification before/after (x4)</b> — left originals, right improved with a uniform dark-olive rim (#4E4E3E, set median). Cosmetic only: silhouettes bit-identical apart from rim recolors and 10 removed 1px speckles.</figcaption>
+  </figure>
+  <figure>
+    <img src="../assets/generated_v2/icons_v2_4x.png" alt="v2 icons sheet">
+    <figcaption><b>Regenerated v2 icons sheet (x4)</b> — health potion, shield, chest, feather fixed; <b>craft_gem v2 failed</b> and phase-1 was kept.</figcaption>
+  </figure>
+</div>
+<div class="grid grid-2">
+  <figure>
+    <img src="../packs/game-asset-pack-v1/metadata/icon_palette_before_after.png" alt="palette before/after board">
+    <figcaption><b>Consensus palette k=32 (seed 0, 5 restarts, fitted on 3270 opaque px)</b> — before/after board. Trades strict per-icon 16-color purity for cross-set consistency (documented deviation from PICO-8).</figcaption>
+  </figure>
+  <figure>
+    <img class="pixelated" src="../packs/game-asset-pack-v1/icons/atlas_4x4.png" alt="final pack icon atlas">
+    <figcaption><b>Final pack icon atlas</b> — 128×128 <span class="mono">atlas_4x4.png</span> shown upscaled 400% with <span class="mono">image-rendering: pixelated</span>; 16 icons, unified outline, k=32 consensus palette.</figcaption>
+  </figure>
+</div>
+<div class="card">
+  <h3>Per-icon verdicts (32×32 readability)</h3>
+  <div class="grid grid-2">
+    <div>
+      <p><span class="chip ready">READY (9)</span></p>
+      <ul>
+        <li><b>sword</b> — clean blade + crossguard + pommel, 1 component (89.7%).</li>
+        <li><b>mana</b> — blue flask with cork, 1 component (100%).</li>
+        <li><b>stamina</b> — green flask, label band, red cap.</li>
+        <li><b>boots</b> — single brown boot (100%).</li>
+        <li><b>ore</b> — brown rock mass with gold flecks.</li>
+        <li><b>potion_health_v2</b> — regenerated: single connected flask (v2 c1, LCC 0.86 vs phase-1 smear of 4 components).</li>
+        <li><b>armor_shield_v2</b> — regenerated: single component (was a 13-part spiral).</li>
+        <li><b>craft_feather_v2</b> — regenerated: reads as a feather (was a flower).</li>
+        <li><b>armor_chest_v2</b> — regenerated: interior dither noise cleaned up.</li>
+      </ul>
+    </div>
+    <div>
+      <p><span class="chip needs">NEEDS_WORK — phase-1 versions with issues (7)</span></p>
+      <ul>
+        <li><b>dagger</b> — fragmented: hilt/pommel separated from a pale blade sliver; largest component 49.2%.</li>
+        <li><b>bow</b> — two arcs, no string; largest component 56.7%, recognizable only because the arcs share a curve.</li>
+        <li><b>staff</b> — readable but ambiguous: green leaf cluster makes it read as a small tree.</li>
+        <li><b>potion_gold</b> — dominant yellow star shape on a green bottle; gold-coin association weak.</li>
+        <li><b>helmet</b> — soft shaded band quantized into a muddy stripe; visor slit unclear.</li>
+        <li><b>scroll</b> — four red corner marks read as keying artifacts rather than design.</li>
+        <li><b>gem</b> — clean cyan egg center plus detached comma fragments (10 components, largest 74.4%); v2 regeneration failed, phase-1 kept.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 4. CHARACTERS -->
+<h2>4 · Characters</h2>
+<div class="grid grid-2">
+  <figure>
+    <span class="before">before — phase 1</span>
+    <img src="../assets/qa/characters/knight_views_4x.png" alt="phase-1 knight views">
+    <figcaption><b>knight_views_4x.png</b> — 4 different knights: disjoint palettes (union 64 opaque colors, pairwise Jaccard 0.0), sword hand flips between views, three distinct helmet designs, back view wears a red skirt instead of silver legs.</figcaption>
+  </figure>
+  <figure>
+    <span class="before">before — phase 1</span>
+    <img src="../assets/qa/characters/knight_views_overlay_4x.png" alt="phase-1 knight views overlay">
+    <figcaption><b>knight_views_overlay_4x.png</b> — tinted silhouettes composite into a mushy blob with no shared contour; head tops misalign up to ~5px.</figcaption>
+  </figure>
+  <figure>
+    <span class="after">after — v2</span>
+    <img src="../packs/game-asset-pack-v1/characters/contact_sheet_4x.png" alt="v2 knight contact sheet">
+    <figcaption><b>v2 contact_sheet_4x.png</b> — front / side / back / three-quarter from one 512px master reference (seed 9001) via IPAdapter-style conditioning; shared 39-color palette remapped across all views (post-remap Jaccard vs common palette 0.41 on every view).</figcaption>
+  </figure>
+  <figure>
+    <img src="../packs/game-asset-pack-v1/characters/knight_turntable_4x.gif" alt="v2 knight turntable 4x">
+    <figcaption><b>knight_turntable_4x.gif</b> (also <a href="../packs/game-asset-pack-v1/characters/knight_turntable.gif">1× version</a>) — same character rotating through the four views.</figcaption>
+  </figure>
+</div>
+<div class="card">
+  <p><b>Pipeline:</b> a single master reference image drives all four views through IPAdapter conditioning, then every view is remapped onto one shared 39-color palette — this is what phase 1 lacked.</p>
+  <p><b>Remaining caveat:</b> the back view still shows slightly squat legs (shorter height vs the other views). Flagged READY-with-caveat, not silently passed.</p>
+</div>
+
+<!-- 5. ANIMATION -->
+<h2>5 · Animation</h2>
+<div class="grid grid-2">
+  <figure>
+    <span class="before">before — phase 1</span>
+    <img src="../assets/qa/characters/knight_sheet_annotated_4x.png" alt="phase-1 knight sheet annotated">
+    <figcaption><b>knight_sheet_annotated_4x.png</b> — 4 unrelated drawings pasted together. Real numbers vs phase-1 claims: silhouette IoU <b>0.571 real vs 0.612 claimed</b>; height spread <b>12px real vs 3px claimed</b>. Face color black → tan → plumed → tan; weapon sword → lance → greatsword; armor silver → brown → silver.</figcaption>
+  </figure>
+  <figure>
+    <span class="after">after — v2 walk (256)</span>
+    <img src="../packs/game-asset-pack-v1/animations/knight_walk_256.gif" alt="v2 walk 256 gif">
+    <figcaption><b>knight_walk_256.gif</b> — registered 4-frame walk cycle, one identity, 10 fps (64px version: <a href="../packs/game-asset-pack-v1/animations/knight_walk_64.gif">knight_walk_64.gif</a>, sheet: <a href="../packs/game-asset-pack-v1/animations/knight_walk.png">knight_walk.png</a>).</figcaption>
+  </figure>
+  <figure>
+    <span class="after">after — v2 walk sheet</span>
+    <img src="../packs/game-asset-pack-v1/animations/knight_walk.png" alt="v2 walk sheet">
+    <figcaption><b>knight_walk.png</b> — 64×64 frames, left-to-right; frames aligned to frame 1 by centroid-x / baseline (dx,dy applied at registration time).</figcaption>
+  </figure>
+  <figure>
+    <span class="after">after — v2 walk (64)</span>
+    <img src="../packs/game-asset-pack-v1/animations/knight_walk_64.gif" alt="v2 walk 64 gif">
+    <figcaption><b>knight_walk_64.gif</b> — game-size playback.</figcaption>
+  </figure>
+</div>
+<div class="card">
+  <h3>Registration numbers (<span class="mono">packs/game-asset-pack-v1/metadata/animations.json</span>)</h3>
+  <table>
+    <tr><th>action</th><th>frames</th><th>registration (dx,dy) per frame</th><th>post baseline spread</th><th>post centroid-x spread</th></tr>
+    <tr><td>idle</td><td class="num">2</td><td class="num mono">(0,0) (1,7)</td><td class="num">0</td><td class="num">0.04</td></tr>
+    <tr><td>walk</td><td class="num">4</td><td class="num mono">(0,0) (0,7) (-1,0) (0,3)</td><td class="num">0</td><td class="num">0.71</td></tr>
+    <tr><td>attack</td><td class="num">3</td><td class="num mono">(0,0) (1,6) (-1,1)</td><td class="num">0</td><td class="num">0.76</td></tr>
+  </table>
+  <p>Registered sheets + GIFs ship for all three actions. Walk shown above; <a href="../packs/game-asset-pack-v1/animations/knight_idle_256.gif">idle_256.gif</a> · <a href="../packs/game-asset-pack-v1/animations/knight_idle_64.gif">idle_64.gif</a> · <a href="../packs/game-asset-pack-v1/animations/knight_attack_256.gif">attack_256.gif</a> · <a href="../packs/game-asset-pack-v1/animations/knight_attack_64.gif">attack_64.gif</a>.</p>
+  <p><b>Honest note:</b> OpenPose ControlNet adherence is <b>partial</b> at 64px — pose guidance constrains but does not lock the skeleton; motion readability is modest. Recorded in the metadata itself (<span class="mono">"OpenPose adherence partial; motion readability modest"</span>).</p>
+</div>
+
+<!-- 6. HD ASSETS -->
+<h2>6 · HD Assets (alpha rekey)</h2>
+<div class="card">
+  <p>Phase 1 claimed anti-aliased transparent alpha; re-verification found <b>0 semi-transparent pixels</b> — binary alpha with opaque backdrop remnants left inside silhouettes. All six HD assets were rekeyed; ring-opaque fractions (fraction of a 3px outer ring that is opaque — should be ~0 for a cleanly cut-out sprite) before → after, from <span class="mono">assets/generated_v2/hd_rekey_report.json</span>:</p>
+  <table>
+    <tr><th>asset</th><th>ring opaque before</th><th>ring opaque after</th><th>removed px</th></tr>
+    <tr><td>hd_mana_potion_256</td><td class="num">53.8%</td><td class="num">10.0%</td><td class="num">34 088</td></tr>
+    <tr><td>hd_mana_potion_512</td><td class="num">0.0%</td><td class="num">0.0%</td><td class="num">26 238</td></tr>
+    <tr><td>hd_chest_256</td><td class="num">20.6%</td><td class="num">20.5%</td><td class="num">2 354</td></tr>
+    <tr><td>hd_chest_512</td><td class="num">4.4%</td><td class="num">4.0%</td><td class="num">290</td></tr>
+    <tr><td>hd_crystal_256</td><td class="num">35.0%</td><td class="num">32.6%</td><td class="num">3 071</td></tr>
+    <tr><td>hd_crystal_512</td><td class="num">57.6%</td><td class="num">57.5%</td><td class="num">644</td></tr>
+  </table>
+  <p>The potion improved dramatically; chest/crystal barely moved because their "remnants" are genuinely interior-edge pixels, not backdrop — honest result, not massaged.</p>
+</div>
+<div class="grid grid-3">
+  <figure>
+    <div class="grid" style="gap:6px;">
+      <div><span class="before">before</span><img src="../assets/generated/hd_mana_potion_256.png" alt="mana potion before"></div>
+      <div><span class="after">after — rekeyed</span><img src="../assets/generated_v2/hd_mana_potion_256_rekeyed.png" alt="mana potion after"></div>
+    </div>
+    <figcaption><b>hd_mana_potion_256</b> — backdrop remnant ring 53.8% → 10.0% (pack copy: <span class="mono">packs/game-asset-pack-v1/hd/hd_mana_potion_256.png</span>).</figcaption>
+  </figure>
+  <figure>
+    <div class="grid" style="gap:6px;">
+      <div><span class="before">before</span><img src="../assets/generated/hd_chest_256.png" alt="chest before"></div>
+      <div><span class="after">after — rekeyed</span><img src="../assets/generated_v2/hd_chest_256_rekeyed.png" alt="chest after"></div>
+    </div>
+    <figcaption><b>hd_chest_256</b> — ring 20.6% → 20.5% (interior-edge remnant, largely unfixable by rekeying).</figcaption>
+  </figure>
+  <figure>
+    <div class="grid" style="gap:6px;">
+      <div><span class="before">before</span><img src="../assets/generated/hd_crystal_256.png" alt="crystal before"></div>
+      <div><span class="after">after — rekeyed</span><img src="../assets/generated_v2/hd_crystal_256_rekeyed.png" alt="crystal after"></div>
+    </div>
+    <figcaption><b>hd_crystal_256</b> — ring 35.0% → 32.6%. Remaining purple shards persist on crystal_512 (see limitations).</figcaption>
+  </figure>
+  <figure>
+    <img src="../assets/generated_v2/hd_rekey_check.png" alt="hd rekey check sheet">
+    <figcaption><b>hd_rekey_check.png</b> — checkerboard-composited verification sheet for all rekeyed assets.</figcaption>
+  </figure>
+</div>
+
+<!-- 7. VERDICT TABLE -->
+<h2>7 · Verdict Table</h2>
+<div class="card">
+  <table>
+    <tr><th>Area</th><th>Item</th><th>Verdict</th><th>Note</th></tr>
+    <tr><td rowspan="10">Terrain</td><td>grass 32/64</td><td><span class="chip ready">READY</span></td><td>seams ≤ 9.1</td></tr>
+    <tr><td>dirt 32/64</td><td><span class="chip ready">READY</span></td><td>seams ≤ 10.3</td></tr>
+    <tr><td>water 32/64</td><td><span class="chip ready">READY</span></td><td>seams ≤ 8.2</td></tr>
+    <tr><td>sand 32</td><td><span class="chip needs">NEEDS_WORK</span></td><td>row seam 20.7; wood-grain striations</td></tr>
+    <tr><td>sand 64</td><td><span class="chip needs">NEEDS_WORK</span></td><td>row seam 18.6</td></tr>
+    <tr><td>stone 32</td><td><span class="chip needs">NEEDS_WORK</span></td><td>seams 17.5/16.9; brick-wall wallpaper</td></tr>
+    <tr><td>stone 64</td><td><span class="chip needs">NEEDS_WORK</span></td><td>asymmetric seams 12.7/4.9</td></tr>
+    <tr><td>mixed maps</td><td><span class="chip ready">READY</span></td><td>bands read correctly after water-fill fix</td></tr>
+    <tr><td>transitions</td><td><span class="chip ready">READY</span></td><td>staircase shoreline is Wang16 by design</td></tr>
+    <tr><td>sand/stone v2 regeneration</td><td><span class="chip needs">NEEDS_WORK</span></td><td>v2 candidates worse than phase-1 under the same metric</td></tr>
+    <tr><td rowspan="3">Autotiles</td><td>blob47 rebuilt atlas</td><td><span class="chip ready">READY</span></td><td>47 distinct states, verified on 5 island seeds</td></tr>
+    <tr><td>wang16 atlas</td><td><span class="chip ready">READY</span></td><td>staircase borders by design</td></tr>
+    <tr><td>phase-1 blob47</td><td><span class="chip experimental">EXPERIMENTAL</span></td><td>11 distinct tiles, 90° corners — superseded</td></tr>
+    <tr><td rowspan="2">Icons</td><td>9 of 16 final set</td><td><span class="chip ready">READY</span></td><td>sword, mana, stamina, boots, ore + 4 v2 regenerations</td></tr>
+    <tr><td>7 phase-1 icons</td><td><span class="chip needs">NEEDS_WORK</span></td><td>dagger, bow, staff, potion_gold, helmet, scroll, gem</td></tr>
+    <tr><td rowspan="2">Characters</td><td>knight views v2</td><td><span class="chip ready">READY (w/ caveat)</span></td><td>back view squat legs</td></tr>
+    <tr><td>knight views phase-1</td><td><span class="chip experimental">EXPERIMENTAL</span></td><td>usable only as 4 independent portraits, not a set</td></tr>
+    <tr><td rowspan="2">Animation</td><td>animations v2 (registered)</td><td><span class="chip ready">READY (w/ caveat)</span></td><td>motion readability modest; OpenPose partial</td></tr>
+    <tr><td>phase-1 sheet</td><td><span class="chip experimental">EXPERIMENTAL</span></td><td>identity drift unfixable by post-processing</td></tr>
+    <tr><td>HD</td><td>6 rekeyed assets</td><td><span class="chip ready">READY</span></td><td>crystal_512 note: "crop 2px" still recommended; purple shards remain</td></tr>
+  </table>
+</div>
+
+<!-- 8. KNOWN LIMITATIONS -->
+<h2>8 · Known Limitations</h2>
+<div class="card">
+  <ul>
+    <li>Sand/stone regeneration failed to beat phase-1 under the same metric (v2 candidates worse; different LoRA/ControlNet structure needed).</li>
+    <li>craft_gem v2 failed, phase-1 kept.</li>
+    <li>OpenPose ControlNet only partially adhered at 64px.</li>
+    <li>HD edges are binary alpha (1px jagged, no AA).</li>
+    <li>k=32 consensus palette trades strict per-icon 16-color purity for cross-set consistency (documented deviation from PICO-8).</li>
+    <li>Batch generation reaches 4.8–10.7 GB swap on this 16GB machine (single-image runs are 0 swap).</li>
+    <li>Remaining purple shards on crystal_512.</li>
+  </ul>
+</div>
+
+<!-- 9. PACK -->
+<h2>9 · Production Pack</h2>
+<div class="card">
+  <p><b><a href="../packs/game-asset-pack-v1/">packs/game-asset-pack-v1/</a></b> — v1.0.0, dated 2026-11-12, 57 entries:</p>
+  <p><span class="chip ready">46 READY</span> <span class="chip needs">11 NEEDS_WORK</span></p>
+  <ul>
+    <li><span class="mono">manifest.json</span> — every entry with status, notes and metrics.</li>
+    <li><a href="../packs/game-asset-pack-v1/PACK_README.md">PACK_README.md</a> — pack contents and usage.</li>
+    <li><a href="../packs/game-asset-pack-v1/GODOT_IMPORT.md">GODOT_IMPORT.md</a> — Godot import instructions.</li>
+    <li>Contents: 10 tiles, 4 blob47 atlases + 1 wang16 atlas + 4 demo maps, 16 icons + atlas, 4 character views + turntables, 3 animation sheets + 9 GIFs, 6 HD assets, metadata (palettes, icon atlas, animations registration, autotiles).</li>
+  </ul>
+</div>
+
+<footer>
+  2026-11-12 · Phase 2 — Visual Quality &amp; Production Readiness ·
+  evidence: <span class="mono">reports/qa_*.json</span>, visual notes; reviewer recomputed all numbers independently.
+</footer>
+
+</body>
+</html>

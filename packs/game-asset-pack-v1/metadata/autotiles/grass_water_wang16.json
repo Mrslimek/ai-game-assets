@@ -1,0 +1,21 @@
+{
+  "pair": "grass_water",
+  "type": "wang16",
+  "tile_size": 32,
+  "atlas_grid": {
+    "cols": 4,
+    "rows": 4,
+    "slots": 16
+  },
+  "atlas": "autotiles/atlas_grass_water_wang16.png",
+  "index_rule": "idx = NW + 2*NE + 4*SW + 8*SE on the dual grid; bit=1 -> overlay (grass) quadrant, 0 -> base (water)",
+  "source_tiles": {
+    "overlay": "tiles/grass_32.png",
+    "base": "tiles/water_32.png"
+  },
+  "demo": {
+    "file": "autotiles/demo_grass_water_wang16.png",
+    "grid": "20x20",
+    "seed": 1
+  }
+}

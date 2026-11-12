@@ -1,0 +1,81 @@
+{
+  "frame_size": [
+    64,
+    64
+  ],
+  "fps": 10,
+  "frame_order": "left-to-right in the sheet",
+  "note": "OpenPose adherence partial; motion readability modest",
+  "registration": "frames aligned to frame 1 by centroid-x / baseline (dx,dy applied at registration time in assets/improved; offsets recorded per action)",
+  "actions": {
+    "idle": {
+      "file": "animations/knight_idle.png",
+      "frame_count": 2,
+      "fps": 10,
+      "gif_64": "animations/knight_idle_64.gif",
+      "gif_256": "animations/knight_idle_256.gif",
+      "registration_dx_dy_per_frame": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          7
+        ]
+      ],
+      "post_baseline_spread": 0,
+      "post_centroid_spread": 0.04
+    },
+    "walk": {
+      "file": "animations/knight_walk.png",
+      "frame_count": 4,
+      "fps": 10,
+      "gif_64": "animations/knight_walk_64.gif",
+      "gif_256": "animations/knight_walk_256.gif",
+      "registration_dx_dy_per_frame": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "post_baseline_spread": 0,
+      "post_centroid_spread": 0.71
+    },
+    "attack": {
+      "file": "animations/knight_attack.png",
+      "frame_count": 3,
+      "fps": 10,
+      "gif_64": "animations/knight_attack_64.gif",
+      "gif_256": "animations/knight_attack_256.gif",
+      "registration_dx_dy_per_frame": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "post_baseline_spread": 0,
+      "post_centroid_spread": 0.76
+    }
+  }
+}

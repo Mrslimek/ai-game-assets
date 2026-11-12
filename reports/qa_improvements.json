@@ -1,0 +1,132 @@
+{
+  "palette_unification": {
+    "condition": "union palette of 16 icons <= 24 colors",
+    "union_size_measured_rgba": 429,
+    "union_size_measured_opaque": 256,
+    "applied": false,
+    "reason": "union is 429 RGBA colors (256 opaque) >> 24; palettes are pairwise disjoint (all off-diagonal Jaccard = 0.0). A nearest-color remap onto a 429+ color 'union' would change nothing; forcing a shared 16-color palette would be a lossy global requantization, not a deterministic fix."
+  },
+  "speckle_removal": {
+    "condition": "isolated opaque pixel with all 8 neighbors transparent",
+    "applied": true,
+    "files": {
+      "potion_health": 1,
+      "armor_helmet": 1,
+      "armor_chest": 3,
+      "armor_shield": 2,
+      "craft_gem": 2,
+      "craft_feather": 1
+    },
+    "total_speckle_pixels": 10,
+    "reason": "isolated pixels cannot belong to the intended silhouette (silhouettes are connected blobs); removal disconnects nothing by construction."
+  },
+  "outline_unification": {
+    "condition": "3+ distinct most-common boundary colors across the 16 icons",
+    "distinct_most_common_boundary_colors": 16,
+    "most_common_per_icon": {
+      "weapon_sword": "#585D4EFF",
+      "weapon_dagger": "#B2BDCEFF",
+      "weapon_bow": "#45604CFF",
+      "weapon_staff": "#611E23FF",
+      "potion_health": "#63212FFF",
+      "potion_mana": "#1E4E6EFF",
+      "potion_stamina": "#273F32FF",
+      "potion_gold": "#4D5648FF",
+      "armor_helmet": "#475C4DFF",
+      "armor_chest": "#2B2A22FF",
+      "armor_shield": "#7A472AFF",
+      "armor_boots": "#62281CFF",
+      "craft_ore": "#5F4023FF",
+      "craft_gem": "#2E4943FF",
+      "craft_scroll": "#885D3EFF",
+      "craft_feather": "#56447DFF"
+    },
+    "applied": true,
+    "median_boundary_color": "#4E4E3EFF",
+    "reason": "boundary colors are per-icon artifacts of quantization; unifying them to the set median is a deterministic cosmetic outline fix."
+  },
+  "files": {
+    "assets/improved/icons/weapon_sword.png": {
+      "changed": true,
+      "reason": "recolored 89 boundary pixel(s) to #4E4E3EFF"
+    },
+    "assets/improved/icons/weapon_dagger.png": {
+      "changed": true,
+      "reason": "recolored 55 boundary pixel(s) to #4E4E3EFF"
+    },
+    "assets/improved/icons/weapon_bow.png": {
+      "changed": true,
+      "reason": "recolored 90 boundary pixel(s) to #4E4E3EFF"
+    },
+    "assets/improved/icons/weapon_staff.png": {
+      "changed": true,
+      "reason": "recolored 56 boundary pixel(s) to #4E4E3EFF"
+    },
+    "assets/improved/icons/potion_health.png": {
+      "changed": true,
+      "reason": "removed 1 speckle pixel(s); recolored 35 boundary pixel(s) to #4E4E3EFF"
+    },
+    "assets/improved/icons/potion_mana.png": {
+      "changed": true,
+      "reason": "recolored 52 boundary pixel(s) to #4E4E3EFF"
+    },
+    "assets/improved/icons/potion_stamina.png": {
+      "changed": true,
+      "reason": "recolored 71 boundary pixel(s) to #4E4E3EFF"
+    },
+    "assets/improved/icons/potion_gold.png": {
+      "changed": true,
+      "reason": "recolored 87 boundary pixel(s) to #4E4E3EFF"
+    },
+    "assets/improved/icons/armor_helmet.png": {
+      "changed": true,
+      "reason": "removed 1 speckle pixel(s); recolored 73 boundary pixel(s) to #4E4E3EFF"
+    },
+    "assets/improved/icons/armor_chest.png": {
+      "changed": true,
+      "reason": "removed 3 speckle pixel(s); recolored 193 boundary pixel(s) to #4E4E3EFF"
+    },
+    "assets/improved/icons/armor_shield.png": {
+      "changed": true,
+      "reason": "removed 2 speckle pixel(s); recolored 84 boundary pixel(s) to #4E4E3EFF"
+    },
+    "assets/improved/icons/armor_boots.png": {
+      "changed": true,
+      "reason": "recolored 61 boundary pixel(s) to #4E4E3EFF"
+    },
+    "assets/improved/icons/craft_ore.png": {
+      "changed": true,
+      "reason": "recolored 50 boundary pixel(s) to #4E4E3EFF"
+    },
+    "assets/improved/icons/craft_gem.png": {
+      "changed": true,
+      "reason": "removed 2 speckle pixel(s); recolored 88 boundary pixel(s) to #4E4E3EFF"
+    },
+    "assets/improved/icons/craft_scroll.png": {
+      "changed": true,
+      "reason": "recolored 109 boundary pixel(s) to #4E4E3EFF"
+    },
+    "assets/improved/icons/craft_feather.png": {
+      "changed": true,
+      "reason": "removed 1 speckle pixel(s); recolored 58 boundary pixel(s) to #4E4E3EFF"
+    }
+  },
+  "atlas": {
+    "rebuilt": true,
+    "path": "assets/improved/atlas/inventory_icons_atlas_4x4.png",
+    "source": "improved icons (see per-file reasons)"
+  },
+  "knight_assets": {
+    "policy": "no repainting; registration only (deliverable 4d)",
+    "files": {
+      "assets/improved/knight_animation_sheet_registered.png": {
+        "changed": true,
+        "reason": "per-frame translation aligning centroid_x and baseline to frame 1: idle dx=+0.00 dy=+0, walk dx=+0.61 dy=+1, run dx=-1.69 dy=+5, attack dx=+3.33 dy=+0"
+      },
+      "assets/generated/knight_*.png": {
+        "changed": false,
+        "reason": "read-only ground truth"
+      }
+    }
+  }
+}

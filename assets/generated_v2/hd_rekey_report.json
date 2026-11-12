@@ -1,0 +1,32 @@
+{
+  "hd_chest_256": {
+    "removed_px": 2354,
+    "ring_opaque_before": 0.2059,
+    "ring_opaque_after": 0.2054
+  },
+  "hd_chest_512": {
+    "removed_px": 290,
+    "ring_opaque_before": 0.0436,
+    "ring_opaque_after": 0.0396
+  },
+  "hd_crystal_256": {
+    "removed_px": 3071,
+    "ring_opaque_before": 0.3495,
+    "ring_opaque_after": 0.3262
+  },
+  "hd_crystal_512": {
+    "removed_px": 644,
+    "ring_opaque_before": 0.5761,
+    "ring_opaque_after": 0.5748
+  },
+  "hd_mana_potion_256": {
+    "removed_px": 34088,
+    "ring_opaque_before": 0.538,
+    "ring_opaque_after": 0.1004
+  },
+  "hd_mana_potion_512": {
+    "removed_px": 26238,
+    "ring_opaque_before": 0.0,
+    "ring_opaque_after": 0.0
+  }
+}

@@ -1,0 +1,951 @@
+{
+  "master_reference": {
+    "file": "assets/generated_v2/knight_master_reference.png",
+    "seed": 9001,
+    "size": 512,
+    "palette_hex_16": [
+      "#141816",
+      "#290507",
+      "#2C201E",
+      "#3D4241",
+      "#57070B",
+      "#76504A",
+      "#780810",
+      "#7B7877",
+      "#834C47",
+      "#A39E9D",
+      "#C80E1C",
+      "#CDCFCF",
+      "#F6F7F7",
+      "#FDFFFE",
+      "#FFFFFD",
+      "#FFFFFF"
+    ]
+  },
+  "knight_views": {
+    "palette_hex": [
+      "#1D2D24",
+      "#211B17",
+      "#273E31",
+      "#2B2720",
+      "#2F130F",
+      "#2F201A",
+      "#3C4141",
+      "#41332B",
+      "#464646",
+      "#494848",
+      "#4A1208",
+      "#530C08",
+      "#575859",
+      "#5B5C5C",
+      "#5E0E0C",
+      "#636564",
+      "#640907",
+      "#65686A",
+      "#737676",
+      "#7B0F0B",
+      "#832712",
+      "#860806",
+      "#8F9396",
+      "#944A36",
+      "#98624C",
+      "#A00B05",
+      "#A1110C",
+      "#A2A8AD",
+      "#AFB3B6",
+      "#B30E10",
+      "#B7BCBF",
+      "#BFC7CB",
+      "#CED3D6",
+      "#D1100B",
+      "#D71313",
+      "#DEE6E9",
+      "#EC110D",
+      "#F0F4F6",
+      "#FDFEFE"
+    ],
+    "post_remap_jaccard_vs_common": {
+      "front": 0.4103,
+      "side": 0.4103,
+      "back": 0.4103,
+      "three_quarter": 0.4103
+    },
+    "candidate_scores": {
+      "front": [
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_view_front_c1.png",
+          "jaccard_vs_master": 0.0001,
+          "bucketed_jaccard_vs_master": 0.0314,
+          "height": 36,
+          "width": 31,
+          "baseline": 45,
+          "centroid_x": 31.66,
+          "components": 1,
+          "lcc": 1.0,
+          "score": 1.0314
+        },
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_view_front_c0.png",
+          "jaccard_vs_master": 0.0001,
+          "bucketed_jaccard_vs_master": 0.0337,
+          "height": 36,
+          "width": 25,
+          "baseline": 47,
+          "centroid_x": 29.04,
+          "components": 2,
+          "lcc": 0.9957,
+          "score": 1.0294
+        }
+      ],
+      "side": [
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_view_side_c0.png",
+          "jaccard_vs_master": 0.0001,
+          "bucketed_jaccard_vs_master": 0.0314,
+          "height": 45,
+          "width": 31,
+          "baseline": 49,
+          "centroid_x": 29.27,
+          "components": 2,
+          "lcc": 0.9973,
+          "score": 1.0287
+        },
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_view_side_c1.png",
+          "jaccard_vs_master": 0.0001,
+          "bucketed_jaccard_vs_master": 0.036,
+          "height": 41,
+          "width": 26,
+          "baseline": 49,
+          "centroid_x": 30.49,
+          "components": 3,
+          "lcc": 0.9915,
+          "score": 1.0275
+        }
+      ],
+      "back": [
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_view_back_c1.png",
+          "jaccard_vs_master": 0.0,
+          "bucketed_jaccard_vs_master": 0.036,
+          "height": 32,
+          "width": 24,
+          "baseline": 44,
+          "centroid_x": 29.75,
+          "components": 1,
+          "lcc": 1.0,
+          "score": 1.036
+        },
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_view_back_c0.png",
+          "jaccard_vs_master": 0.0001,
+          "bucketed_jaccard_vs_master": 0.0337,
+          "height": 35,
+          "width": 32,
+          "baseline": 44,
+          "centroid_x": 27.32,
+          "components": 1,
+          "lcc": 1.0,
+          "score": 1.0337
+        }
+      ],
+      "three_quarter": [
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_view_three_quarter_c1.png",
+          "jaccard_vs_master": 0.0001,
+          "bucketed_jaccard_vs_master": 0.0268,
+          "height": 35,
+          "width": 29,
+          "baseline": 43,
+          "centroid_x": 27.05,
+          "components": 1,
+          "lcc": 1.0,
+          "score": 1.0268
+        },
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_view_three_quarter_c0.png",
+          "jaccard_vs_master": 0.0001,
+          "bucketed_jaccard_vs_master": 0.0315,
+          "height": 38,
+          "width": 29,
+          "baseline": 48,
+          "centroid_x": 29.29,
+          "components": 5,
+          "lcc": 0.9856,
+          "score": 1.0171000000000001
+        }
+      ]
+    }
+  },
+  "animation": {
+    "actions": {
+      "idle": {
+        "files": [
+          "v2_anim_idle_0_c0.png",
+          "v2_anim_idle_1_c0.png"
+        ],
+        "pre_registration": [
+          {
+            "height": 44,
+            "width": 32,
+            "baseline": 51,
+            "centroid_x": 29.72,
+            "components": 2,
+            "lcc": 0.9987
+          },
+          {
+            "height": 39,
+            "width": 27,
+            "baseline": 44,
+            "centroid_x": 28.76,
+            "components": 1,
+            "lcc": 1.0
+          }
+        ],
+        "pre_palette_jaccard_vs_frame1": [
+          1.0,
+          0.0
+        ],
+        "offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            7
+          ]
+        ],
+        "post_registration": [
+          {
+            "height": 44,
+            "width": 32,
+            "baseline": 51,
+            "centroid_x": 29.72,
+            "components": 2,
+            "lcc": 0.9987
+          },
+          {
+            "height": 39,
+            "width": 27,
+            "baseline": 51,
+            "centroid_x": 29.76,
+            "components": 1,
+            "lcc": 1.0
+          }
+        ],
+        "post_baseline_spread": 0,
+        "post_centroid_spread": 0.04,
+        "sheet": "knight_idle_v2_sheet.png"
+      },
+      "walk": {
+        "files": [
+          "v2_anim_walk_0_c0.png",
+          "v2_anim_walk_1_c0.png",
+          "v2_anim_walk_2_c0.png",
+          "v2_anim_walk_3_c0.png"
+        ],
+        "pre_registration": [
+          {
+            "height": 41,
+            "width": 30,
+            "baseline": 50,
+            "centroid_x": 29.38,
+            "components": 2,
+            "lcc": 0.9986
+          },
+          {
+            "height": 37,
+            "width": 29,
+            "baseline": 43,
+            "centroid_x": 28.97,
+            "components": 1,
+            "lcc": 1.0
+          },
+          {
+            "height": 42,
+            "width": 29,
+            "baseline": 50,
+            "centroid_x": 30.68,
+            "components": 3,
+            "lcc": 0.9899
+          },
+          {
+            "height": 37,
+            "width": 25,
+            "baseline": 47,
+            "centroid_x": 29.49,
+            "components": 2,
+            "lcc": 0.992
+          }
+        ],
+        "pre_palette_jaccard_vs_frame1": [
+          1.0,
+          0.0,
+          0.0,
+          0.0323
+        ],
+        "offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "post_registration": [
+          {
+            "height": 41,
+            "width": 30,
+            "baseline": 50,
+            "centroid_x": 29.38,
+            "components": 2,
+            "lcc": 0.9986
+          },
+          {
+            "height": 37,
+            "width": 29,
+            "baseline": 50,
+            "centroid_x": 28.97,
+            "components": 1,
+            "lcc": 1.0
+          },
+          {
+            "height": 42,
+            "width": 29,
+            "baseline": 50,
+            "centroid_x": 29.68,
+            "components": 3,
+            "lcc": 0.9899
+          },
+          {
+            "height": 37,
+            "width": 25,
+            "baseline": 50,
+            "centroid_x": 29.49,
+            "components": 2,
+            "lcc": 0.992
+          }
+        ],
+        "post_baseline_spread": 0,
+        "post_centroid_spread": 0.71,
+        "sheet": "knight_walk_v2_sheet.png"
+      },
+      "attack": {
+        "files": [
+          "v2_anim_attack_0_c0.png",
+          "v2_anim_attack_1_c0.png",
+          "v2_anim_attack_2_c0.png"
+        ],
+        "pre_registration": [
+          {
+            "height": 41,
+            "width": 32,
+            "baseline": 50,
+            "centroid_x": 29.72,
+            "components": 5,
+            "lcc": 0.9856
+          },
+          {
+            "height": 38,
+            "width": 28,
+            "baseline": 44,
+            "centroid_x": 28.41,
+            "components": 1,
+            "lcc": 1.0
+          },
+          {
+            "height": 41,
+            "width": 29,
+            "baseline": 49,
+            "centroid_x": 31.17,
+            "components": 2,
+            "lcc": 0.9985
+          }
+        ],
+        "pre_palette_jaccard_vs_frame1": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        "post_registration": [
+          {
+            "height": 41,
+            "width": 32,
+            "baseline": 50,
+            "centroid_x": 29.72,
+            "components": 5,
+            "lcc": 0.9856
+          },
+          {
+            "height": 38,
+            "width": 28,
+            "baseline": 50,
+            "centroid_x": 29.41,
+            "components": 1,
+            "lcc": 1.0
+          },
+          {
+            "height": 41,
+            "width": 29,
+            "baseline": 50,
+            "centroid_x": 30.17,
+            "components": 2,
+            "lcc": 0.9985
+          }
+        ],
+        "post_baseline_spread": 0,
+        "post_centroid_spread": 0.76,
+        "sheet": "knight_attack_v2_sheet.png"
+      }
+    },
+    "palette_report": {
+      "idle": {
+        "frames_raw_palette_jaccard_vs_f1": [
+          1.0,
+          0.0
+        ],
+        "frames_5bit_bucket_jaccard_vs_f1": [
+          1.0,
+          0.0
+        ],
+        "phase1_frame_5bit_bucket_jaccard_vs_v2_f1": [
+          0.0,
+          0.0
+        ],
+        "remapped_jaccard_vs_common_palette": [
+          0.4103,
+          0.4103
+        ],
+        "offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            7
+          ]
+        ],
+        "post_baseline_spread": 0,
+        "post_centroid_spread": 0.04
+      },
+      "walk": {
+        "frames_raw_palette_jaccard_vs_f1": [
+          1.0,
+          0.0,
+          0.0,
+          0.0323
+        ],
+        "frames_5bit_bucket_jaccard_vs_f1": [
+          1.0,
+          0.0323,
+          0.0323,
+          0.0323
+        ],
+        "phase1_frame_5bit_bucket_jaccard_vs_v2_f1": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "remapped_jaccard_vs_common_palette": [
+          0.4103,
+          0.359,
+          0.4103,
+          0.4103
+        ],
+        "offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "post_baseline_spread": 0,
+        "post_centroid_spread": 0.71
+      },
+      "attack": {
+        "frames_raw_palette_jaccard_vs_f1": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "frames_5bit_bucket_jaccard_vs_f1": [
+          1.0,
+          0.0323,
+          0.0323
+        ],
+        "phase1_frame_5bit_bucket_jaccard_vs_v2_f1": [
+          0.0,
+          0.0,
+          0.0323
+        ],
+        "remapped_jaccard_vs_common_palette": [
+          0.359,
+          0.3846,
+          0.4103
+        ],
+        "offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        "post_baseline_spread": 0,
+        "post_centroid_spread": 0.76
+      }
+    }
+  },
+  "icons": {
+    "icons": {
+      "potion_health": [
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_icon_potion_health_c1.png",
+          "tag": "v2_icon_potion_health_c1.png",
+          "lcc": 0.8571,
+          "components": 3,
+          "boundary_consistency": 0.1628,
+          "score": 1.0199
+        },
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/potion_health.png",
+          "tag": "phase1",
+          "lcc": 0.717,
+          "components": 4,
+          "boundary_consistency": 0.2778,
+          "score": 0.9948
+        },
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_icon_potion_health_c0.png",
+          "tag": "v2_icon_potion_health_c0.png",
+          "lcc": 0.6716,
+          "components": 7,
+          "boundary_consistency": 0.1905,
+          "score": 0.8621
+        }
+      ],
+      "armor_shield": [
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_icon_armor_shield_c1.png",
+          "tag": "v2_icon_armor_shield_c1.png",
+          "lcc": 1.0,
+          "components": 1,
+          "boundary_consistency": 0.4167,
+          "score": 1.4167
+        },
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_icon_armor_shield_c0.png",
+          "tag": "v2_icon_armor_shield_c0.png",
+          "lcc": 1.0,
+          "components": 1,
+          "boundary_consistency": 0.1667,
+          "score": 1.1667
+        },
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/armor_shield.png",
+          "tag": "phase1",
+          "lcc": 0.5481,
+          "components": 13,
+          "boundary_consistency": 0.186,
+          "score": 0.7341
+        }
+      ],
+      "craft_feather": [
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_icon_craft_feather_c1.png",
+          "tag": "v2_icon_craft_feather_c1.png",
+          "lcc": 0.9844,
+          "components": 2,
+          "boundary_consistency": 0.3125,
+          "score": 1.2969
+        },
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/craft_feather.png",
+          "tag": "phase1",
+          "lcc": 0.9933,
+          "components": 2,
+          "boundary_consistency": 0.2034,
+          "score": 1.1967
+        },
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_icon_craft_feather_c0.png",
+          "tag": "v2_icon_craft_feather_c0.png",
+          "lcc": 0.358,
+          "components": 3,
+          "boundary_consistency": 0.1584,
+          "score": 0.5164
+        }
+      ],
+      "craft_gem": [
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/craft_gem.png",
+          "tag": "phase1",
+          "lcc": 0.7436,
+          "components": 10,
+          "boundary_consistency": 0.3,
+          "score": 1.0436
+        },
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_icon_craft_gem_c1.png",
+          "tag": "v2_icon_craft_gem_c1.png",
+          "lcc": 0.5125,
+          "components": 7,
+          "boundary_consistency": 0.1545,
+          "score": 0.667
+        },
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_icon_craft_gem_c0.png",
+          "tag": "v2_icon_craft_gem_c0.png",
+          "lcc": 0.082,
+          "components": 41,
+          "boundary_consistency": 0.1615,
+          "score": 0.2435
+        }
+      ],
+      "armor_chest": [
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_icon_armor_chest_c0.png",
+          "tag": "v2_icon_armor_chest_c0.png",
+          "lcc": 0.9942,
+          "components": 2,
+          "boundary_consistency": 0.1711,
+          "score": 1.1652
+        },
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/armor_chest.png",
+          "tag": "phase1",
+          "lcc": 0.8768,
+          "components": 12,
+          "boundary_consistency": 0.2194,
+          "score": 1.0961
+        },
+        {
+          "path": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated_v2/v2_icon_armor_chest_c1.png",
+          "tag": "v2_icon_armor_chest_c1.png",
+          "lcc": 0.7657,
+          "components": 14,
+          "boundary_consistency": 0.2304,
+          "score": 0.9961
+        }
+      ]
+    },
+    "chosen": {
+      "potion_health": "v2_icon_potion_health_c1.png",
+      "armor_shield": "v2_icon_armor_shield_c1.png",
+      "craft_feather": "v2_icon_craft_feather_c1.png",
+      "craft_gem": "craft_gem.png",
+      "armor_chest": "v2_icon_armor_chest_c0.png"
+    }
+  },
+  "terrain": {
+    "tiles": {
+      "sand_32": {
+        "candidates": [
+          {
+            "file": "sand_32_c0.png",
+            "size": 32,
+            "avg_row_seam": 29.1458,
+            "avg_col_seam": 10.0729,
+            "autoperiod_x": 12,
+            "autoperiod_y": 4,
+            "autoperiod_strength": 0.3109,
+            "edge_density_mean": 104.7052,
+            "edge_density_cv": 0.5069,
+            "luminance_drift": 3.9591,
+            "palette_size": 16,
+            "verdict_flags": [
+              "seam_suspect",
+              "density_uneven"
+            ]
+          },
+          {
+            "file": "sand_32_c1.png",
+            "size": 32,
+            "avg_row_seam": 30.9583,
+            "avg_col_seam": 14.8229,
+            "autoperiod_x": 11,
+            "autoperiod_y": 15,
+            "autoperiod_strength": 0.3027,
+            "edge_density_mean": 93.4304,
+            "edge_density_cv": 0.5461,
+            "luminance_drift": 3.94,
+            "palette_size": 16,
+            "verdict_flags": [
+              "seam_suspect",
+              "density_uneven"
+            ]
+          }
+        ],
+        "phase1": {
+          "file": "sand_32.png",
+          "size": 32,
+          "avg_row_seam": 20.6979,
+          "avg_col_seam": 10.2708,
+          "autoperiod_x": 2,
+          "autoperiod_y": 5,
+          "autoperiod_strength": 0.2698,
+          "edge_density_mean": 91.165,
+          "edge_density_cv": 0.6036,
+          "luminance_drift": 1.6554,
+          "palette_size": 16,
+          "verdict_flags": [
+            "seam_suspect",
+            "density_uneven"
+          ]
+        },
+        "kept": "phase1",
+        "seam_before": 30.9687,
+        "seam_after": 30.9687
+      },
+      "sand_64": {
+        "candidates": [
+          {
+            "file": "sand_64_c0.png",
+            "size": 64,
+            "avg_row_seam": 26.3646,
+            "avg_col_seam": 7.2917,
+            "autoperiod_x": 2,
+            "autoperiod_y": 15,
+            "autoperiod_strength": 0.4314,
+            "edge_density_mean": 88.1607,
+            "edge_density_cv": 0.6372,
+            "luminance_drift": 1.1824,
+            "palette_size": 16,
+            "verdict_flags": [
+              "seam_suspect",
+              "density_uneven"
+            ]
+          },
+          {
+            "file": "sand_64_c1.png",
+            "size": 64,
+            "avg_row_seam": 41.9427,
+            "avg_col_seam": 8.8542,
+            "autoperiod_x": 2,
+            "autoperiod_y": 9,
+            "autoperiod_strength": 0.447,
+            "edge_density_mean": 86.2767,
+            "edge_density_cv": 0.6632,
+            "luminance_drift": 4.9879,
+            "palette_size": 16,
+            "verdict_flags": [
+              "seam_suspect",
+              "density_uneven"
+            ]
+          }
+        ],
+        "phase1": {
+          "file": "sand_64.png",
+          "size": 64,
+          "avg_row_seam": 18.5781,
+          "avg_col_seam": 7.3698,
+          "autoperiod_x": 2,
+          "autoperiod_y": 30,
+          "autoperiod_strength": 0.5979,
+          "edge_density_mean": 88.7063,
+          "edge_density_cv": 0.6274,
+          "luminance_drift": 2.0911,
+          "palette_size": 16,
+          "verdict_flags": [
+            "seam_suspect",
+            "density_uneven"
+          ]
+        },
+        "kept": "phase1",
+        "seam_before": 25.9479,
+        "seam_after": 25.9479
+      },
+      "stone_32": {
+        "candidates": [
+          {
+            "file": "stone_32_c0.png",
+            "size": 32,
+            "avg_row_seam": 26.1979,
+            "avg_col_seam": 9.9896,
+            "autoperiod_x": 9,
+            "autoperiod_y": 16,
+            "autoperiod_strength": 0.2998,
+            "edge_density_mean": 89.216,
+            "edge_density_cv": 0.5046,
+            "luminance_drift": 3.1507,
+            "palette_size": 16,
+            "verdict_flags": [
+              "seam_suspect",
+              "density_uneven"
+            ]
+          },
+          {
+            "file": "stone_32_c1.png",
+            "size": 32,
+            "avg_row_seam": 28.7812,
+            "avg_col_seam": 13.8438,
+            "autoperiod_x": 9,
+            "autoperiod_y": 16,
+            "autoperiod_strength": 0.3054,
+            "edge_density_mean": 86.9564,
+            "edge_density_cv": 0.498,
+            "luminance_drift": 3.8348,
+            "palette_size": 16,
+            "verdict_flags": [
+              "seam_suspect"
+            ]
+          }
+        ],
+        "phase1": {
+          "file": "stone_32.png",
+          "size": 32,
+          "avg_row_seam": 17.4688,
+          "avg_col_seam": 16.875,
+          "autoperiod_x": 4,
+          "autoperiod_y": 14,
+          "autoperiod_strength": 0.1891,
+          "edge_density_mean": 79.5458,
+          "edge_density_cv": 0.529,
+          "luminance_drift": 2.8497,
+          "palette_size": 16,
+          "verdict_flags": [
+            "seam_suspect",
+            "density_uneven"
+          ]
+        },
+        "kept": "phase1",
+        "seam_before": 34.3438,
+        "seam_after": 34.3438
+      },
+      "stone_64": {
+        "candidates": [
+          {
+            "file": "stone_64_c0.png",
+            "size": 64,
+            "avg_row_seam": 12.8177,
+            "avg_col_seam": 6.3281,
+            "autoperiod_x": 2,
+            "autoperiod_y": 32,
+            "autoperiod_strength": 0.458,
+            "edge_density_mean": 91.4794,
+            "edge_density_cv": 0.5275,
+            "luminance_drift": 2.6632,
+            "palette_size": 16,
+            "verdict_flags": [
+              "seam_suspect",
+              "density_uneven"
+            ]
+          },
+          {
+            "file": "stone_64_c1.png",
+            "size": 64,
+            "avg_row_seam": 33.5781,
+            "avg_col_seam": 5.2656,
+            "autoperiod_x": 2,
+            "autoperiod_y": 7,
+            "autoperiod_strength": 0.469,
+            "edge_density_mean": 77.1071,
+            "edge_density_cv": 0.6258,
+            "luminance_drift": 3.1142,
+            "palette_size": 16,
+            "verdict_flags": [
+              "seam_suspect",
+              "density_uneven"
+            ]
+          }
+        ],
+        "phase1": {
+          "file": "stone_64.png",
+          "size": 64,
+          "avg_row_seam": 12.7083,
+          "avg_col_seam": 4.9115,
+          "autoperiod_x": 2,
+          "autoperiod_y": 28,
+          "autoperiod_strength": 0.4081,
+          "edge_density_mean": 79.8029,
+          "edge_density_cv": 0.512,
+          "luminance_drift": 3.0297,
+          "palette_size": 16,
+          "verdict_flags": [
+            "seam_suspect",
+            "density_uneven"
+          ]
+        },
+        "kept": "phase1",
+        "seam_before": 17.6198,
+        "seam_after": 17.6198
+      }
+    }
+  },
+  "hd_rekey": {
+    "hd_chest_256": {
+      "removed_px": 2354,
+      "ring_opaque_before": 0.2059,
+      "ring_opaque_after": 0.2054
+    },
+    "hd_chest_512": {
+      "removed_px": 290,
+      "ring_opaque_before": 0.0436,
+      "ring_opaque_after": 0.0396
+    },
+    "hd_crystal_256": {
+      "removed_px": 3071,
+      "ring_opaque_before": 0.3495,
+      "ring_opaque_after": 0.3262
+    },
+    "hd_crystal_512": {
+      "removed_px": 644,
+      "ring_opaque_before": 0.5761,
+      "ring_opaque_after": 0.5748
+    },
+    "hd_mana_potion_256": {
+      "removed_px": 34088,
+      "ring_opaque_before": 0.538,
+      "ring_opaque_after": 0.1004
+    },
+    "hd_mana_potion_512": {
+      "removed_px": 26238,
+      "ring_opaque_before": 0.0,
+      "ring_opaque_after": 0.0
+    }
+  }
+}

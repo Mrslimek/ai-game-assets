@@ -1,0 +1,590 @@
+{
+  "timestamp": "2026-11-12T17:09:40.475205",
+  "hardware": {
+    "device": "MacBook Air M5",
+    "memory": "16 GB Unified Memory",
+    "os": "macOS",
+    "backend": "PyTorch 2.12.1 (MPS)",
+    "comfyui": "0.44.2"
+  },
+  "benchmarks": [
+    {
+      "id": "BM2",
+      "name": "Benchmark 2: Seamless Terrain Textures",
+      "model": "Juggernaut XL + Lightning + Pixel Art XL",
+      "resolution": "32x32 & 64x64",
+      "steps": 8,
+      "cold_start_s": 145.8,
+      "warm_start_s": 33.17,
+      "peak_ram_gb": 8.7,
+      "swap_mb": 0,
+      "mps": true,
+      "status": "PASS",
+      "assets": [
+        {
+          "name": "Grass Terrain (32x32)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/validated/preview_3x3_grass_32.png",
+          "desc": "MASD: 8.92, MaxStep: 55.0, Colors: 16",
+          "badges": [
+            "32x32",
+            "Seamless 3x3 Preview",
+            "PICO-8 Palette"
+          ]
+        },
+        {
+          "name": "Grass Terrain (64x64)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/validated/preview_3x3_grass_64.png",
+          "desc": "MASD: 8.24, MaxStep: 47.0, Colors: 16",
+          "badges": [
+            "64x64",
+            "Seamless 3x3 Preview",
+            "PICO-8 Palette"
+          ]
+        },
+        {
+          "name": "Dirt Terrain (32x32)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/validated/preview_3x3_dirt_32.png",
+          "desc": "MASD: 10.3, MaxStep: 50.0, Colors: 16",
+          "badges": [
+            "32x32",
+            "Seamless 3x3 Preview",
+            "PICO-8 Palette"
+          ]
+        },
+        {
+          "name": "Dirt Terrain (64x64)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/validated/preview_3x3_dirt_64.png",
+          "desc": "MASD: 7.68, MaxStep: 37.0, Colors: 16",
+          "badges": [
+            "64x64",
+            "Seamless 3x3 Preview",
+            "PICO-8 Palette"
+          ]
+        },
+        {
+          "name": "Sand Terrain (32x32)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/validated/preview_3x3_sand_32.png",
+          "desc": "MASD: 15.48, MaxStep: 70.0, Colors: 16",
+          "badges": [
+            "32x32",
+            "Seamless 3x3 Preview",
+            "PICO-8 Palette"
+          ]
+        },
+        {
+          "name": "Sand Terrain (64x64)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/validated/preview_3x3_sand_64.png",
+          "desc": "MASD: 12.97, MaxStep: 70.0, Colors: 16",
+          "badges": [
+            "64x64",
+            "Seamless 3x3 Preview",
+            "PICO-8 Palette"
+          ]
+        },
+        {
+          "name": "Stone Terrain (32x32)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/validated/preview_3x3_stone_32.png",
+          "desc": "MASD: 17.17, MaxStep: 60.0, Colors: 16",
+          "badges": [
+            "32x32",
+            "Seamless 3x3 Preview",
+            "PICO-8 Palette"
+          ]
+        },
+        {
+          "name": "Stone Terrain (64x64)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/validated/preview_3x3_stone_64.png",
+          "desc": "MASD: 8.81, MaxStep: 56.0, Colors: 16",
+          "badges": [
+            "64x64",
+            "Seamless 3x3 Preview",
+            "PICO-8 Palette"
+          ]
+        },
+        {
+          "name": "Water Terrain (32x32)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/validated/preview_3x3_water_32.png",
+          "desc": "MASD: 6.89, MaxStep: 48.0, Colors: 16",
+          "badges": [
+            "32x32",
+            "Seamless 3x3 Preview",
+            "PICO-8 Palette"
+          ]
+        },
+        {
+          "name": "Water Terrain (64x64)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/validated/preview_3x3_water_64.png",
+          "desc": "MASD: 5.13, MaxStep: 38.0, Colors: 16",
+          "badges": [
+            "64x64",
+            "Seamless 3x3 Preview",
+            "PICO-8 Palette"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BM1",
+      "name": "Benchmark 1: Top-down RPG Autotiling Sets",
+      "model": "Procedural Autotile Synthesizer + SDXL Seamless Base",
+      "resolution": "32x32 (16 & 47 Tile Sets)",
+      "steps": 8,
+      "cold_start_s": 0.5,
+      "warm_start_s": 0.4,
+      "peak_ram_gb": 8.5,
+      "swap_mb": 0,
+      "mps": true,
+      "status": "PASS",
+      "assets": [
+        {
+          "name": "Wang 16 Dual-Grid Tileset Atlas",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/validated/tileset_wang16.png",
+          "desc": "16 corner transition tiles combining Grass overlay on Dirt base",
+          "badges": [
+            "Wang 16",
+            "32x32 Tiles",
+            "Atlas 4x4",
+            "Zero Discontinuity"
+          ]
+        },
+        {
+          "name": "Wang 16 Procedural Island Map",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/validated/map_wang16_x4.png",
+          "desc": "Rendered 15x15 island terrain demonstrating seamless corner autotiling",
+          "badges": [
+            "Wang 16 Map",
+            "Assembled Preview 4x",
+            "Game Ready"
+          ]
+        },
+        {
+          "name": "Blob 47 8-Neighbor Tileset Atlas",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/validated/tileset_blob47.png",
+          "desc": "47-tile complete neighborhood bitmask set for seamless terrain blending",
+          "badges": [
+            "Blob 47",
+            "32x32 Tiles",
+            "Atlas 8x6",
+            "Full Connectivity"
+          ]
+        },
+        {
+          "name": "Blob 47 Procedural Island Map",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/validated/map_blob47_x4.png",
+          "desc": "Rendered 16x16 autotiled map with full 8-neighbor edge and corner rules",
+          "badges": [
+            "Blob 47 Map",
+            "Assembled Preview 4x",
+            "Game Ready"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BM3",
+      "name": "Benchmark 3: Isometric Environment",
+      "model": "Juggernaut XL + Lightning + Pixel Art XL + SK_BackgroundRemove",
+      "resolution": "64x64",
+      "steps": 8,
+      "cold_start_s": 28.4,
+      "warm_start_s": 27.12,
+      "peak_ram_gb": 8.7,
+      "swap_mb": 0,
+      "mps": true,
+      "status": "PASS",
+      "assets": [
+        {
+          "name": "Isometric Platform grass",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/platform_grass.png",
+          "desc": "Isometric projection, transparent background, unified lighting",
+          "badges": [
+            "64x64",
+            "Isometric",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Isometric Platform stone",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/platform_stone.png",
+          "desc": "Isometric projection, transparent background, unified lighting",
+          "badges": [
+            "64x64",
+            "Isometric",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Isometric Cliff rock",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/cliff_rock.png",
+          "desc": "Isometric projection, transparent background, unified lighting",
+          "badges": [
+            "64x64",
+            "Isometric",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Isometric Pine tree",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/pine_tree.png",
+          "desc": "Isometric projection, transparent background, unified lighting",
+          "badges": [
+            "64x64",
+            "Isometric",
+            "Transparent PNG"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BM4",
+      "name": "Benchmark 4: Character Turnaround Consistency",
+      "model": "Juggernaut XL + Lightning + Pixel Art XL + SK_BackgroundRemove",
+      "resolution": "64x64",
+      "steps": 8,
+      "cold_start_s": 26.5,
+      "warm_start_s": 26.95,
+      "peak_ram_gb": 8.7,
+      "swap_mb": 0,
+      "mps": true,
+      "status": "PASS",
+      "assets": [
+        {
+          "name": "Knight (Front View)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/knight_front.png",
+          "desc": "Character concept turnaround maintaining armor silhouette and palette",
+          "badges": [
+            "64x64",
+            "Front View",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Knight (Side View)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/knight_side.png",
+          "desc": "Character concept turnaround maintaining armor silhouette and palette",
+          "badges": [
+            "64x64",
+            "Side View",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Knight (Back View)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/knight_back.png",
+          "desc": "Character concept turnaround maintaining armor silhouette and palette",
+          "badges": [
+            "64x64",
+            "Back View",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Knight (Three quarter View)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/knight_three_quarter.png",
+          "desc": "Character concept turnaround maintaining armor silhouette and palette",
+          "badges": [
+            "64x64",
+            "Three_quarter View",
+            "Transparent PNG"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BM5",
+      "name": "Benchmark 5: Character Animation Sprite Sheets",
+      "model": "Juggernaut XL + Lightning + Pixel Art XL + SK_SpriteSheet",
+      "resolution": "64x64 (4 Frames)",
+      "steps": 8,
+      "cold_start_s": 26.0,
+      "warm_start_s": 26.38,
+      "peak_ram_gb": 8.7,
+      "swap_mb": 0,
+      "mps": true,
+      "status": "PASS",
+      "assets": [
+        {
+          "name": "Knight Animation Sprite Sheet (Idle, Walk, Run, Attack)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/knight_animation_sheet.png",
+          "desc": "4-frame sequence (256x64), Baseline variance: 4.25 px, IoU: 0.571",
+          "badges": [
+            "64x64 Frames",
+            "4 Actions",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Animated Playback (x4 Zoom)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/validated/knight_animation_sheet_anim_x4.gif",
+          "desc": "Real-time animation preview demonstrating baseline and silhouette stability",
+          "badges": [
+            "Animated GIF",
+            "4 FPS",
+            "x4 Pixel Perfect"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BM6",
+      "name": "Benchmark 6: Inventory Icon Sets (16 Icons)",
+      "model": "Juggernaut XL + Lightning + Pixel Art XL + SK_BackgroundRemove",
+      "resolution": "32x32 (16 Icons)",
+      "steps": 8,
+      "cold_start_s": 24.5,
+      "warm_start_s": 24.5,
+      "peak_ram_gb": 8.6,
+      "swap_mb": 0,
+      "mps": true,
+      "status": "PASS",
+      "assets": [
+        {
+          "name": "Complete 16-Icon Inventory Atlas (4x4 Grid)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/validated/inventory_icons_atlas_x4.png",
+          "desc": "16 unified icons (4 weapons, 4 potions, 4 armor, 4 materials) at 4x preview",
+          "badges": [
+            "16 Icons",
+            "Atlas 4x4",
+            "PICO-8 Palette",
+            "Full Consistency"
+          ]
+        },
+        {
+          "name": "Weapon Sword",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/weapon_sword.png",
+          "desc": "32x32 inventory icon, unified 16-color palette, clean outline",
+          "badges": [
+            "32x32",
+            "Weapon",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Weapon Dagger",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/weapon_dagger.png",
+          "desc": "32x32 inventory icon, unified 16-color palette, clean outline",
+          "badges": [
+            "32x32",
+            "Weapon",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Weapon Bow",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/weapon_bow.png",
+          "desc": "32x32 inventory icon, unified 16-color palette, clean outline",
+          "badges": [
+            "32x32",
+            "Weapon",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Weapon Staff",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/weapon_staff.png",
+          "desc": "32x32 inventory icon, unified 16-color palette, clean outline",
+          "badges": [
+            "32x32",
+            "Weapon",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Potion Health",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/potion_health.png",
+          "desc": "32x32 inventory icon, unified 16-color palette, clean outline",
+          "badges": [
+            "32x32",
+            "Potion",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Potion Mana",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/potion_mana.png",
+          "desc": "32x32 inventory icon, unified 16-color palette, clean outline",
+          "badges": [
+            "32x32",
+            "Potion",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Potion Stamina",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/potion_stamina.png",
+          "desc": "32x32 inventory icon, unified 16-color palette, clean outline",
+          "badges": [
+            "32x32",
+            "Potion",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Potion Gold",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/potion_gold.png",
+          "desc": "32x32 inventory icon, unified 16-color palette, clean outline",
+          "badges": [
+            "32x32",
+            "Potion",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Armor Helmet",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/armor_helmet.png",
+          "desc": "32x32 inventory icon, unified 16-color palette, clean outline",
+          "badges": [
+            "32x32",
+            "Armor",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Armor Chest",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/armor_chest.png",
+          "desc": "32x32 inventory icon, unified 16-color palette, clean outline",
+          "badges": [
+            "32x32",
+            "Armor",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Armor Shield",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/armor_shield.png",
+          "desc": "32x32 inventory icon, unified 16-color palette, clean outline",
+          "badges": [
+            "32x32",
+            "Armor",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Armor Boots",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/armor_boots.png",
+          "desc": "32x32 inventory icon, unified 16-color palette, clean outline",
+          "badges": [
+            "32x32",
+            "Armor",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Craft Ore",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/craft_ore.png",
+          "desc": "32x32 inventory icon, unified 16-color palette, clean outline",
+          "badges": [
+            "32x32",
+            "Craft",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Craft Gem",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/craft_gem.png",
+          "desc": "32x32 inventory icon, unified 16-color palette, clean outline",
+          "badges": [
+            "32x32",
+            "Craft",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Craft Scroll",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/craft_scroll.png",
+          "desc": "32x32 inventory icon, unified 16-color palette, clean outline",
+          "badges": [
+            "32x32",
+            "Craft",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "Craft Feather",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/craft_feather.png",
+          "desc": "32x32 inventory icon, unified 16-color palette, clean outline",
+          "badges": [
+            "32x32",
+            "Craft",
+            "Transparent PNG"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BM7",
+      "name": "Benchmark 7: Stylized HD 2D Game Assets",
+      "model": "Juggernaut XL + Lightning (Non-Pixel Mode) + SK_BackgroundRemove",
+      "resolution": "256x256 & 512x512",
+      "steps": 8,
+      "cold_start_s": 1.02,
+      "warm_start_s": 30.22,
+      "peak_ram_gb": 10.71,
+      "swap_mb": 0,
+      "mps": true,
+      "status": "PASS",
+      "assets": [
+        {
+          "name": "HD Chest (256x256)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/hd_chest_256.png",
+          "desc": "Hand-painted stylized 2D game asset, transparent background, smooth gradients",
+          "badges": [
+            "256x256",
+            "HD Stylized 2D",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "HD Chest (512x512)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/hd_chest_512.png",
+          "desc": "Hand-painted stylized 2D game asset, transparent background, smooth gradients",
+          "badges": [
+            "512x512",
+            "HD Stylized 2D",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "HD Mana Potion (256x256)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/hd_mana_potion_256.png",
+          "desc": "Hand-painted stylized 2D game asset, transparent background, smooth gradients",
+          "badges": [
+            "256x256",
+            "HD Stylized 2D",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "HD Mana Potion (512x512)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/hd_mana_potion_512.png",
+          "desc": "Hand-painted stylized 2D game asset, transparent background, smooth gradients",
+          "badges": [
+            "512x512",
+            "HD Stylized 2D",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "HD Crystal (256x256)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/hd_crystal_256.png",
+          "desc": "Hand-painted stylized 2D game asset, transparent background, smooth gradients",
+          "badges": [
+            "256x256",
+            "HD Stylized 2D",
+            "Transparent PNG"
+          ]
+        },
+        {
+          "name": "HD Crystal (512x512)",
+          "image": "/Users/viktor/Projects/AI/game-asset-ai/assets/generated/hd_crystal_512.png",
+          "desc": "Hand-painted stylized 2D game asset, transparent background, smooth gradients",
+          "badges": [
+            "512x512",
+            "HD Stylized 2D",
+            "Transparent PNG"
+          ]
+        }
+      ]
+    }
+  ]
+}

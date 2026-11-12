@@ -1,0 +1,27 @@
+{
+  "atlas": "icons/atlas_4x4.png",
+  "grid": {
+    "cols": 4,
+    "rows": 4,
+    "cell": 32
+  },
+  "order_row_major": [
+    "weapon_sword",
+    "weapon_dagger",
+    "weapon_bow",
+    "weapon_staff",
+    "potion_health",
+    "potion_mana",
+    "potion_stamina",
+    "potion_gold",
+    "armor_helmet",
+    "armor_chest",
+    "armor_shield",
+    "armor_boots",
+    "craft_ore",
+    "craft_gem",
+    "craft_scroll",
+    "craft_feather"
+  ],
+  "note": "slot i -> row i//4, col i%4"
+}

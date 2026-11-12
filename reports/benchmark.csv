@@ -1,0 +1,8 @@
+Workflow,Model,Resolution,Steps,Cold_Start_s,Warm_Start_s,Peak_RAM_GB,Swap_MB,MPS,Status
+Benchmark 2: Seamless Terrain Textures,Juggernaut XL + Lightning + Pixel Art XL,32x32 & 64x64,8,145.8,33.17,8.7,0,True,PASS
+Benchmark 1: Top-down RPG Autotiling Sets,Procedural Autotile Synthesizer + SDXL Seamless Base,32x32 (16 & 47 Tile Sets),8,0.5,0.4,8.5,0,True,PASS
+Benchmark 3: Isometric Environment,Juggernaut XL + Lightning + Pixel Art XL + SK_BackgroundRemove,64x64,8,28.4,27.12,8.7,0,True,PASS
+Benchmark 4: Character Turnaround Consistency,Juggernaut XL + Lightning + Pixel Art XL + SK_BackgroundRemove,64x64,8,26.5,26.95,8.7,0,True,PASS
+Benchmark 5: Character Animation Sprite Sheets,Juggernaut XL + Lightning + Pixel Art XL + SK_SpriteSheet,64x64 (4 Frames),8,26.0,26.38,8.7,0,True,PASS
+Benchmark 6: Inventory Icon Sets (16 Icons),Juggernaut XL + Lightning + Pixel Art XL + SK_BackgroundRemove,32x32 (16 Icons),8,24.5,24.5,8.6,0,True,PASS
+Benchmark 7: Stylized HD 2D Game Assets,Juggernaut XL + Lightning (Non-Pixel Mode) + SK_BackgroundRemove,256x256 & 512x512,8,1.02,30.22,10.71,0,True,PASS

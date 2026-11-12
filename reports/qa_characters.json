@@ -1,0 +1,1042 @@
+{
+  "knight_views": [
+    {
+      "name": "knight_front",
+      "size": [
+        64,
+        64
+      ],
+      "char_width": 35,
+      "char_height": 50,
+      "baseline": 55,
+      "bbox_left": 11,
+      "bbox_top": 6,
+      "centroid_x": 31.52,
+      "silhouette_row_counts": [
+        2,
+        4,
+        7,
+        7,
+        7,
+        7,
+        11,
+        14,
+        17,
+        19,
+        20,
+        22,
+        23,
+        23,
+        23,
+        22,
+        17,
+        19,
+        24,
+        23,
+        19,
+        25,
+        25,
+        25,
+        25,
+        25,
+        26,
+        26,
+        26,
+        27,
+        28,
+        27,
+        25,
+        26,
+        27,
+        27,
+        27,
+        28,
+        27,
+        25,
+        25,
+        21,
+        11,
+        3,
+        5,
+        2,
+        0,
+        0,
+        3,
+        7
+      ],
+      "head_body_split": {
+        "neck_y": 22,
+        "head_h": 17,
+        "body_h": 33,
+        "head_body_ratio": 0.515,
+        "head_undetected": false,
+        "width_valleys_in_upper_45pct": [
+          [
+            22,
+            17
+          ],
+          [
+            26,
+            19
+          ]
+        ]
+      },
+      "region_palettes": {
+        "top": [
+          {
+            "color": "#9D2F29FF",
+            "count": 44
+          },
+          {
+            "color": "#631C19FF",
+            "count": 29
+          },
+          {
+            "color": "#D6342EFF",
+            "count": 26
+          }
+        ],
+        "mid": [
+          {
+            "color": "#631C19FF",
+            "count": 75
+          },
+          {
+            "color": "#727888FF",
+            "count": 57
+          },
+          {
+            "color": "#454348FF",
+            "count": 45
+          }
+        ],
+        "bottom": [
+          {
+            "color": "#672520FF",
+            "count": 63
+          },
+          {
+            "color": "#631C19FF",
+            "count": 46
+          },
+          {
+            "color": "#9D2F29FF",
+            "count": 42
+          }
+        ]
+      },
+      "palette_vs_knight_front": {
+        "jaccard_rgba": 1.0,
+        "jaccard_opaque": 1.0
+      }
+    },
+    {
+      "name": "knight_side",
+      "size": [
+        64,
+        64
+      ],
+      "char_width": 50,
+      "char_height": 56,
+      "baseline": 59,
+      "bbox_left": 9,
+      "bbox_top": 4,
+      "centroid_x": 30.35,
+      "silhouette_row_counts": [
+        3,
+        5,
+        6,
+        6,
+        8,
+        8,
+        9,
+        12,
+        14,
+        16,
+        19,
+        21,
+        23,
+        23,
+        21,
+        22,
+        24,
+        24,
+        26,
+        26,
+        28,
+        29,
+        31,
+        31,
+        32,
+        33,
+        34,
+        34,
+        35,
+        36,
+        38,
+        39,
+        36,
+        31,
+        28,
+        25,
+        22,
+        22,
+        24,
+        22,
+        20,
+        20,
+        17,
+        16,
+        14,
+        13,
+        10,
+        10,
+        2,
+        2,
+        4,
+        1,
+        1,
+        7,
+        5,
+        4
+      ],
+      "head_body_split": {
+        "neck_y": null,
+        "head_h": null,
+        "body_h": null,
+        "head_body_ratio": null,
+        "head_undetected": true,
+        "width_valleys_in_upper_45pct": [
+          [
+            19,
+            22
+          ]
+        ]
+      },
+      "region_palettes": {
+        "top": [
+          {
+            "color": "#4D4140FF",
+            "count": 35
+          },
+          {
+            "color": "#581C1CFF",
+            "count": 34
+          },
+          {
+            "color": "#C02316FF",
+            "count": 26
+          }
+        ],
+        "mid": [
+          {
+            "color": "#431916FF",
+            "count": 73
+          },
+          {
+            "color": "#581C1CFF",
+            "count": 71
+          },
+          {
+            "color": "#6F6F73FF",
+            "count": 62
+          }
+        ],
+        "bottom": [
+          {
+            "color": "#4D4140FF",
+            "count": 33
+          },
+          {
+            "color": "#431916FF",
+            "count": 29
+          },
+          {
+            "color": "#46312FFF",
+            "count": 25
+          }
+        ]
+      },
+      "palette_vs_knight_front": {
+        "jaccard_rgba": 0.0,
+        "jaccard_opaque": 0.0
+      }
+    },
+    {
+      "name": "knight_back",
+      "size": [
+        64,
+        64
+      ],
+      "char_width": 37,
+      "char_height": 54,
+      "baseline": 58,
+      "bbox_left": 9,
+      "bbox_top": 5,
+      "centroid_x": 31.16,
+      "silhouette_row_counts": [
+        1,
+        5,
+        7,
+        9,
+        9,
+        9,
+        9,
+        16,
+        20,
+        22,
+        22,
+        24,
+        24,
+        24,
+        25,
+        22,
+        17,
+        14,
+        12,
+        14,
+        17,
+        23,
+        24,
+        27,
+        27,
+        27,
+        27,
+        27,
+        27,
+        27,
+        30,
+        30,
+        28,
+        26,
+        26,
+        25,
+        25,
+        25,
+        24,
+        26,
+        25,
+        24,
+        17,
+        17,
+        15,
+        12,
+        11,
+        4,
+        4,
+        6,
+        5,
+        3,
+        0,
+        1
+      ],
+      "head_body_split": {
+        "neck_y": 23,
+        "head_h": 19,
+        "body_h": 35,
+        "head_body_ratio": 0.543,
+        "head_undetected": false,
+        "width_valleys_in_upper_45pct": [
+          [
+            23,
+            18
+          ]
+        ]
+      },
+      "region_palettes": {
+        "top": [
+          {
+            "color": "#68292BFF",
+            "count": 51
+          },
+          {
+            "color": "#90312EFF",
+            "count": 48
+          },
+          {
+            "color": "#4C4547FF",
+            "count": 35
+          }
+        ],
+        "mid": [
+          {
+            "color": "#4B2929FF",
+            "count": 91
+          },
+          {
+            "color": "#68292BFF",
+            "count": 73
+          },
+          {
+            "color": "#4C4547FF",
+            "count": 42
+          }
+        ],
+        "bottom": [
+          {
+            "color": "#4B2929FF",
+            "count": 33
+          },
+          {
+            "color": "#68292BFF",
+            "count": 25
+          },
+          {
+            "color": "#9999A0FF",
+            "count": 25
+          }
+        ]
+      },
+      "palette_vs_knight_front": {
+        "jaccard_rgba": 0.0,
+        "jaccard_opaque": 0.0
+      }
+    },
+    {
+      "name": "knight_three_quarter",
+      "size": [
+        64,
+        64
+      ],
+      "char_width": 49,
+      "char_height": 51,
+      "baseline": 56,
+      "bbox_left": 10,
+      "bbox_top": 6,
+      "centroid_x": 30.78,
+      "silhouette_row_counts": [
+        4,
+        6,
+        8,
+        8,
+        8,
+        10,
+        12,
+        14,
+        18,
+        20,
+        22,
+        22,
+        23,
+        23,
+        25,
+        25,
+        26,
+        27,
+        28,
+        29,
+        31,
+        32,
+        32,
+        33,
+        34,
+        34,
+        34,
+        34,
+        32,
+        33,
+        30,
+        29,
+        26,
+        25,
+        23,
+        23,
+        24,
+        24,
+        24,
+        19,
+        16,
+        12,
+        8,
+        8,
+        3,
+        4,
+        3,
+        7,
+        5,
+        2,
+        4
+      ],
+      "head_body_split": {
+        "neck_y": null,
+        "head_h": null,
+        "body_h": null,
+        "head_body_ratio": null,
+        "head_undetected": true,
+        "width_valleys_in_upper_45pct": []
+      },
+      "region_palettes": {
+        "top": [
+          {
+            "color": "#611E1AFF",
+            "count": 38
+          },
+          {
+            "color": "#59575BFF",
+            "count": 35
+          },
+          {
+            "color": "#D02A22FF",
+            "count": 35
+          }
+        ],
+        "mid": [
+          {
+            "color": "#611E1AFF",
+            "count": 100
+          },
+          {
+            "color": "#59575BFF",
+            "count": 91
+          },
+          {
+            "color": "#80868EFF",
+            "count": 48
+          }
+        ],
+        "bottom": [
+          {
+            "color": "#611E1AFF",
+            "count": 56
+          },
+          {
+            "color": "#403334FF",
+            "count": 32
+          },
+          {
+            "color": "#80868EFF",
+            "count": 18
+          }
+        ]
+      },
+      "palette_vs_knight_front": {
+        "jaccard_rgba": 0.0,
+        "jaccard_opaque": 0.0
+      }
+    }
+  ],
+  "anim_frames": [
+    {
+      "name": "anim_idle",
+      "size": [
+        64,
+        64
+      ],
+      "char_width": 31,
+      "char_height": 44,
+      "baseline": 54,
+      "bbox_left": 15,
+      "bbox_top": 11,
+      "centroid_x": 32.13,
+      "silhouette_row_counts": [
+        4,
+        2,
+        5,
+        3,
+        6,
+        9,
+        11,
+        12,
+        13,
+        17,
+        18,
+        19,
+        20,
+        21,
+        20,
+        20,
+        21,
+        22,
+        24,
+        26,
+        27,
+        30,
+        30,
+        25,
+        23,
+        24,
+        23,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        19,
+        16,
+        11,
+        10,
+        13,
+        2,
+        1,
+        4,
+        5,
+        8,
+        3
+      ],
+      "head_body_split": {
+        "neck_y": null,
+        "head_h": null,
+        "body_h": null,
+        "head_body_ratio": null,
+        "head_undetected": true,
+        "width_valleys_in_upper_45pct": [
+          [
+            17,
+            18
+          ],
+          [
+            22,
+            22
+          ]
+        ]
+      },
+      "region_palettes": {
+        "top": [
+          {
+            "color": "#70211FFF",
+            "count": 26
+          },
+          {
+            "color": "#68666BFF",
+            "count": 24
+          },
+          {
+            "color": "#942624FF",
+            "count": 22
+          }
+        ],
+        "mid": [
+          {
+            "color": "#70211FFF",
+            "count": 50
+          },
+          {
+            "color": "#68666BFF",
+            "count": 47
+          },
+          {
+            "color": "#4F4B50FF",
+            "count": 37
+          }
+        ],
+        "bottom": [
+          {
+            "color": "#65211EFF",
+            "count": 41
+          },
+          {
+            "color": "#70211FFF",
+            "count": 33
+          },
+          {
+            "color": "#5D4343FF",
+            "count": 25
+          }
+        ]
+      },
+      "palette_vs_knight_front": {
+        "jaccard_rgba": 0.0,
+        "jaccard_opaque": 0.0
+      }
+    },
+    {
+      "name": "anim_walk",
+      "size": [
+        64,
+        64
+      ],
+      "char_width": 32,
+      "char_height": 42,
+      "baseline": 53,
+      "bbox_left": 15,
+      "bbox_top": 12,
+      "centroid_x": 31.52,
+      "silhouette_row_counts": [
+        4,
+        7,
+        8,
+        9,
+        11,
+        13,
+        13,
+        14,
+        16,
+        18,
+        19,
+        21,
+        22,
+        22,
+        22,
+        23,
+        23,
+        24,
+        27,
+        27,
+        30,
+        30,
+        25,
+        22,
+        24,
+        23,
+        21,
+        22,
+        22,
+        22,
+        22,
+        21,
+        14,
+        7,
+        6,
+        6,
+        1,
+        0,
+        0,
+        5,
+        4,
+        5
+      ],
+      "head_body_split": {
+        "neck_y": null,
+        "head_h": null,
+        "body_h": null,
+        "head_body_ratio": null,
+        "head_undetected": true,
+        "width_valleys_in_upper_45pct": []
+      },
+      "region_palettes": {
+        "top": [
+          {
+            "color": "#6F6D72FF",
+            "count": 32
+          },
+          {
+            "color": "#C13328FF",
+            "count": 30
+          },
+          {
+            "color": "#6A2322FF",
+            "count": 24
+          }
+        ],
+        "mid": [
+          {
+            "color": "#6A2322FF",
+            "count": 61
+          },
+          {
+            "color": "#5F595BFF",
+            "count": 45
+          },
+          {
+            "color": "#4E2722FF",
+            "count": 37
+          }
+        ],
+        "bottom": [
+          {
+            "color": "#6A2322FF",
+            "count": 29
+          },
+          {
+            "color": "#4E2722FF",
+            "count": 20
+          },
+          {
+            "color": "#5F595BFF",
+            "count": 18
+          }
+        ]
+      },
+      "palette_vs_knight_front": {
+        "jaccard_rgba": 0.0,
+        "jaccard_opaque": 0.0
+      }
+    },
+    {
+      "name": "anim_run",
+      "size": [
+        64,
+        64
+      ],
+      "char_width": 47,
+      "char_height": 35,
+      "baseline": 49,
+      "bbox_left": 7,
+      "bbox_top": 15,
+      "centroid_x": 33.82,
+      "silhouette_row_counts": [
+        4,
+        7,
+        8,
+        6,
+        3,
+        9,
+        13,
+        18,
+        22,
+        31,
+        42,
+        46,
+        35,
+        34,
+        34,
+        32,
+        28,
+        25,
+        25,
+        25,
+        26,
+        26,
+        26,
+        23,
+        22,
+        21,
+        13,
+        15,
+        13,
+        11,
+        4,
+        5,
+        7,
+        4,
+        4
+      ],
+      "head_body_split": {
+        "neck_y": null,
+        "head_h": null,
+        "body_h": null,
+        "head_body_ratio": null,
+        "head_undetected": true,
+        "width_valleys_in_upper_45pct": [
+          [
+            19,
+            3
+          ]
+        ]
+      },
+      "region_palettes": {
+        "top": [
+          {
+            "color": "#6C1F1AFF",
+            "count": 29
+          },
+          {
+            "color": "#6D727AFF",
+            "count": 22
+          },
+          {
+            "color": "#882325FF",
+            "count": 20
+          }
+        ],
+        "mid": [
+          {
+            "color": "#882325FF",
+            "count": 48
+          },
+          {
+            "color": "#514E53FF",
+            "count": 42
+          },
+          {
+            "color": "#611B19FF",
+            "count": 34
+          }
+        ],
+        "bottom": [
+          {
+            "color": "#514E53FF",
+            "count": 25
+          },
+          {
+            "color": "#611B19FF",
+            "count": 25
+          },
+          {
+            "color": "#882325FF",
+            "count": 23
+          }
+        ]
+      },
+      "palette_vs_knight_front": {
+        "jaccard_rgba": 0.0,
+        "jaccard_opaque": 0.0
+      }
+    },
+    {
+      "name": "anim_attack",
+      "size": [
+        64,
+        64
+      ],
+      "char_width": 32,
+      "char_height": 47,
+      "baseline": 54,
+      "bbox_left": 15,
+      "bbox_top": 8,
+      "centroid_x": 28.8,
+      "silhouette_row_counts": [
+        2,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        4,
+        4,
+        3,
+        5,
+        6,
+        8,
+        10,
+        10,
+        13,
+        15,
+        16,
+        18,
+        20,
+        23,
+        23,
+        22,
+        23,
+        22,
+        25,
+        23,
+        21,
+        23,
+        23,
+        25,
+        24,
+        24,
+        19,
+        20,
+        17,
+        18,
+        3,
+        2,
+        2,
+        1,
+        0,
+        3,
+        8
+      ],
+      "head_body_split": {
+        "neck_y": null,
+        "head_h": null,
+        "body_h": null,
+        "head_body_ratio": null,
+        "head_undetected": true,
+        "width_valleys_in_upper_45pct": [
+          [
+            15,
+            3
+          ],
+          [
+            20,
+            3
+          ]
+        ]
+      },
+      "region_palettes": {
+        "top": [
+          {
+            "color": "#656367FF",
+            "count": 16
+          },
+          {
+            "color": "#EDECF1FF",
+            "count": 13
+          },
+          {
+            "color": "#6C6870FF",
+            "count": 8
+          }
+        ],
+        "mid": [
+          {
+            "color": "#5D1417FF",
+            "count": 46
+          },
+          {
+            "color": "#656367FF",
+            "count": 34
+          },
+          {
+            "color": "#544046FF",
+            "count": 33
+          }
+        ],
+        "bottom": [
+          {
+            "color": "#5D1417FF",
+            "count": 62
+          },
+          {
+            "color": "#881B21FF",
+            "count": 19
+          },
+          {
+            "color": "#656367FF",
+            "count": 18
+          }
+        ]
+      },
+      "palette_vs_knight_front": {
+        "jaccard_rgba": 0.0,
+        "jaccard_opaque": 0.0
+      }
+    }
+  ],
+  "animation_sheet": {
+    "sheet": "knight_animation_sheet.png",
+    "note": "sheet composes four independently generated frames of DIFFERENT actions; not a coherent 4-frame animation",
+    "frames": [
+      {
+        "frame": "idle",
+        "char_width": 31,
+        "char_height": 44,
+        "baseline": 54,
+        "bbox_left": 15,
+        "centroid_x": 32.13,
+        "registration_dx": 0.0,
+        "registration_dy": 0
+      },
+      {
+        "frame": "walk",
+        "char_width": 32,
+        "char_height": 42,
+        "baseline": 53,
+        "bbox_left": 15,
+        "centroid_x": 31.52,
+        "registration_dx": 0.61,
+        "registration_dy": 1
+      },
+      {
+        "frame": "run",
+        "char_width": 47,
+        "char_height": 35,
+        "baseline": 49,
+        "bbox_left": 7,
+        "centroid_x": 33.82,
+        "registration_dx": -1.69,
+        "registration_dy": 5
+      },
+      {
+        "frame": "attack",
+        "char_width": 32,
+        "char_height": 47,
+        "baseline": 54,
+        "bbox_left": 15,
+        "centroid_x": 28.8,
+        "registration_dx": 3.33,
+        "registration_dy": 0
+      }
+    ],
+    "registration": "dx aligns centroid_x to frame 1, dy aligns baseline to frame 1"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "ckpt": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors"
+    }
+  },
+  "lightning_lora": {
+    "class_type": "LoraLoader",
+    "inputs": {
+      "lora_name": "sdxl_lightning_8step_lora.safetensors",
+      "strength_model": 1.0,
+      "strength_clip": 1.0,
+      "model": [
+        "ckpt",
+        0
+      ],
+      "clip": [
+        "ckpt",
+        1
+      ]
+    }
+  },
+  "latent": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 256,
+      "height": 256,
+      "batch_size": 1
+    }
+  },
+  "pos": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "stylized 2D video game asset, hand-painted digital art, cluster of glowing purple magical crystals, smooth hand-painted vector cartoon game prop, isolated on solid pure green background, clean edges, game ready graphic, crisp vector style",
+      "clip": [
+        "lightning_lora",
+        1
+      ]
+    }
+  },
+  "neg": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "pixel art, 3d render, photo, photorealistic, complex background, shadow, blurry, compression artifacts",
+      "clip": [
+        "lightning_lora",
+        1
+      ]
+    }
+  },
+  "sampler": {
+    "class_type": "KSampler",
+    "inputs": {
+      "seed": 703,
+      "steps": 8,
+      "cfg": 1.5,
+      "sampler_name": "euler",
+      "scheduler": "sgm_uniform",
+      "denoise": 1.0,
+      "model": [
+        "lightning_lora",
+        0
+      ],
+      "positive": [
+        "pos",
+        0
+      ],
+      "negative": [
+        "neg",
+        0
+      ],
+      "latent_image": [
+        "latent",
+        0
+      ]
+    }
+  },
+  "vae_decode": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "sampler",
+        0
+      ],
+      "vae": [
+        "ckpt",
+        2
+      ]
+    }
+  },
+  "bg_remove": {
+    "class_type": "SK_BackgroundRemove",
+    "inputs": {
+      "image": [
+        "vae_decode",
+        0
+      ],
+      "mode": "key_refine",
+      "remove_shadow": true,
+      "tolerance": 0.1,
+      "mask_threshold": 0.5,
+      "enabled": true
+    }
+  },
+  "save": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "bm7_hd_crystal_256",
+      "images": [
+        "bg_remove",
+        0
+      ]
+    }
+  }
+}

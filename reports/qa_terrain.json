@@ -1,0 +1,433 @@
+{
+  "tiles": [
+    {
+      "file": "grass_32.png",
+      "size": 32,
+      "avg_row_seam": 9.1146,
+      "avg_col_seam": 8.7292,
+      "autoperiod_x": 5,
+      "autoperiod_y": 2,
+      "autoperiod_strength": 0.1038,
+      "edge_density_mean": 35.3259,
+      "edge_density_cv": 0.5497,
+      "luminance_drift": 0.8667,
+      "palette_size": 16,
+      "verdict_flags": [
+        "density_uneven"
+      ]
+    },
+    {
+      "file": "grass_64.png",
+      "size": 64,
+      "avg_row_seam": 8.0208,
+      "avg_col_seam": 8.4531,
+      "autoperiod_x": 3,
+      "autoperiod_y": 22,
+      "autoperiod_strength": 0.047,
+      "edge_density_mean": 36.8908,
+      "edge_density_cv": 0.5293,
+      "luminance_drift": 1.3427,
+      "palette_size": 16,
+      "verdict_flags": [
+        "density_uneven"
+      ]
+    },
+    {
+      "file": "dirt_32.png",
+      "size": 32,
+      "avg_row_seam": 10.2708,
+      "avg_col_seam": 10.3229,
+      "autoperiod_x": 16,
+      "autoperiod_y": 11,
+      "autoperiod_strength": 0.1338,
+      "edge_density_mean": 52.8129,
+      "edge_density_cv": 0.5549,
+      "luminance_drift": 1.4301,
+      "palette_size": 16,
+      "verdict_flags": [
+        "density_uneven"
+      ]
+    },
+    {
+      "file": "dirt_64.png",
+      "size": 64,
+      "avg_row_seam": 8.1458,
+      "avg_col_seam": 7.2188,
+      "autoperiod_x": 2,
+      "autoperiod_y": 31,
+      "autoperiod_strength": 0.1722,
+      "edge_density_mean": 49.774,
+      "edge_density_cv": 0.5713,
+      "luminance_drift": 0.9751,
+      "palette_size": 16,
+      "verdict_flags": [
+        "density_uneven"
+      ]
+    },
+    {
+      "file": "sand_32.png",
+      "size": 32,
+      "avg_row_seam": 20.6979,
+      "avg_col_seam": 10.2708,
+      "autoperiod_x": 2,
+      "autoperiod_y": 5,
+      "autoperiod_strength": 0.2698,
+      "edge_density_mean": 91.165,
+      "edge_density_cv": 0.6036,
+      "luminance_drift": 1.6554,
+      "palette_size": 16,
+      "verdict_flags": [
+        "seam_suspect",
+        "density_uneven"
+      ]
+    },
+    {
+      "file": "sand_64.png",
+      "size": 64,
+      "avg_row_seam": 18.5781,
+      "avg_col_seam": 7.3698,
+      "autoperiod_x": 2,
+      "autoperiod_y": 30,
+      "autoperiod_strength": 0.5979,
+      "edge_density_mean": 88.7063,
+      "edge_density_cv": 0.6274,
+      "luminance_drift": 2.0911,
+      "palette_size": 16,
+      "verdict_flags": [
+        "seam_suspect",
+        "density_uneven"
+      ]
+    },
+    {
+      "file": "stone_32.png",
+      "size": 32,
+      "avg_row_seam": 17.4688,
+      "avg_col_seam": 16.875,
+      "autoperiod_x": 4,
+      "autoperiod_y": 14,
+      "autoperiod_strength": 0.1891,
+      "edge_density_mean": 79.5458,
+      "edge_density_cv": 0.529,
+      "luminance_drift": 2.8497,
+      "palette_size": 16,
+      "verdict_flags": [
+        "seam_suspect",
+        "density_uneven"
+      ]
+    },
+    {
+      "file": "stone_64.png",
+      "size": 64,
+      "avg_row_seam": 12.7083,
+      "avg_col_seam": 4.9115,
+      "autoperiod_x": 2,
+      "autoperiod_y": 28,
+      "autoperiod_strength": 0.4081,
+      "edge_density_mean": 79.8029,
+      "edge_density_cv": 0.512,
+      "luminance_drift": 3.0297,
+      "palette_size": 16,
+      "verdict_flags": [
+        "seam_suspect",
+        "density_uneven"
+      ]
+    },
+    {
+      "file": "water_32.png",
+      "size": 32,
+      "avg_row_seam": 8.2188,
+      "avg_col_seam": 5.5521,
+      "autoperiod_x": 2,
+      "autoperiod_y": 15,
+      "autoperiod_strength": 0.0485,
+      "edge_density_mean": 30.4142,
+      "edge_density_cv": 0.5859,
+      "luminance_drift": 1.6506,
+      "palette_size": 16,
+      "verdict_flags": [
+        "density_uneven"
+      ]
+    },
+    {
+      "file": "water_64.png",
+      "size": 64,
+      "avg_row_seam": 6.7031,
+      "avg_col_seam": 3.5521,
+      "autoperiod_x": 2,
+      "autoperiod_y": 17,
+      "autoperiod_strength": 0.169,
+      "edge_density_mean": 30.2634,
+      "edge_density_cv": 0.6088,
+      "luminance_drift": 1.6329,
+      "palette_size": 16,
+      "verdict_flags": [
+        "density_uneven"
+      ]
+    }
+  ],
+  "connectivity": {
+    "repetition_10x10_grass_32.png": {
+      "type": "repetition",
+      "shared_edge_pixel_diff": 8.9219,
+      "mismatch_count": 0,
+      "edges_checked": 0,
+      "note": "identical tiles; pixel diff across internal boundaries equals tile seam"
+    },
+    "repetition_30x30_grass_32.png": {
+      "type": "repetition",
+      "shared_edge_pixel_diff": 8.9219,
+      "mismatch_count": 0,
+      "edges_checked": 0,
+      "note": "identical tiles; pixel diff across internal boundaries equals tile seam"
+    },
+    "repetition_10x10_grass_64.png": {
+      "type": "repetition",
+      "shared_edge_pixel_diff": 8.237,
+      "mismatch_count": 0,
+      "edges_checked": 0,
+      "note": "identical tiles; pixel diff across internal boundaries equals tile seam"
+    },
+    "repetition_30x30_grass_64.png": {
+      "type": "repetition",
+      "shared_edge_pixel_diff": 8.237,
+      "mismatch_count": 0,
+      "edges_checked": 0,
+      "note": "identical tiles; pixel diff across internal boundaries equals tile seam"
+    },
+    "repetition_10x10_dirt_32.png": {
+      "type": "repetition",
+      "shared_edge_pixel_diff": 10.2969,
+      "mismatch_count": 0,
+      "edges_checked": 0,
+      "note": "identical tiles; pixel diff across internal boundaries equals tile seam"
+    },
+    "repetition_30x30_dirt_32.png": {
+      "type": "repetition",
+      "shared_edge_pixel_diff": 10.2969,
+      "mismatch_count": 0,
+      "edges_checked": 0,
+      "note": "identical tiles; pixel diff across internal boundaries equals tile seam"
+    },
+    "repetition_10x10_dirt_64.png": {
+      "type": "repetition",
+      "shared_edge_pixel_diff": 7.6823,
+      "mismatch_count": 0,
+      "edges_checked": 0,
+      "note": "identical tiles; pixel diff across internal boundaries equals tile seam"
+    },
+    "repetition_30x30_dirt_64.png": {
+      "type": "repetition",
+      "shared_edge_pixel_diff": 7.6823,
+      "mismatch_count": 0,
+      "edges_checked": 0,
+      "note": "identical tiles; pixel diff across internal boundaries equals tile seam"
+    },
+    "repetition_10x10_sand_32.png": {
+      "type": "repetition",
+      "shared_edge_pixel_diff": 15.4844,
+      "mismatch_count": 0,
+      "edges_checked": 0,
+      "note": "identical tiles; pixel diff across internal boundaries equals tile seam"
+    },
+    "repetition_30x30_sand_32.png": {
+      "type": "repetition",
+      "shared_edge_pixel_diff": 15.4844,
+      "mismatch_count": 0,
+      "edges_checked": 0,
+      "note": "identical tiles; pixel diff across internal boundaries equals tile seam"
+    },
+    "repetition_10x10_sand_64.png": {
+      "type": "repetition",
+      "shared_edge_pixel_diff": 12.974,
+      "mismatch_count": 0,
+      "edges_checked": 0,
+      "note": "identical tiles; pixel diff across internal boundaries equals tile seam"
+    },
+    "repetition_30x30_sand_64.png": {
+      "type": "repetition",
+      "shared_edge_pixel_diff": 12.974,
+      "mismatch_count": 0,
+      "edges_checked": 0,
+      "note": "identical tiles; pixel diff across internal boundaries equals tile seam"
+    },
+    "repetition_10x10_stone_32.png": {
+      "type": "repetition",
+      "shared_edge_pixel_diff": 17.1719,
+      "mismatch_count": 0,
+      "edges_checked": 0,
+      "note": "identical tiles; pixel diff across internal boundaries equals tile seam"
+    },
+    "repetition_30x30_stone_32.png": {
+      "type": "repetition",
+      "shared_edge_pixel_diff": 17.1719,
+      "mismatch_count": 0,
+      "edges_checked": 0,
+      "note": "identical tiles; pixel diff across internal boundaries equals tile seam"
+    },
+    "repetition_10x10_stone_64.png": {
+      "type": "repetition",
+      "shared_edge_pixel_diff": 8.8099,
+      "mismatch_count": 0,
+      "edges_checked": 0,
+      "note": "identical tiles; pixel diff across internal boundaries equals tile seam"
+    },
+    "repetition_30x30_stone_64.png": {
+      "type": "repetition",
+      "shared_edge_pixel_diff": 8.8099,
+      "mismatch_count": 0,
+      "edges_checked": 0,
+      "note": "identical tiles; pixel diff across internal boundaries equals tile seam"
+    },
+    "repetition_10x10_water_32.png": {
+      "type": "repetition",
+      "shared_edge_pixel_diff": 6.8854,
+      "mismatch_count": 0,
+      "edges_checked": 0,
+      "note": "identical tiles; pixel diff across internal boundaries equals tile seam"
+    },
+    "repetition_30x30_water_32.png": {
+      "type": "repetition",
+      "shared_edge_pixel_diff": 6.8854,
+      "mismatch_count": 0,
+      "edges_checked": 0,
+      "note": "identical tiles; pixel diff across internal boundaries equals tile seam"
+    },
+    "repetition_10x10_water_64.png": {
+      "type": "repetition",
+      "shared_edge_pixel_diff": 5.1276,
+      "mismatch_count": 0,
+      "edges_checked": 0,
+      "note": "identical tiles; pixel diff across internal boundaries equals tile seam"
+    },
+    "repetition_30x30_water_64.png": {
+      "type": "repetition",
+      "shared_edge_pixel_diff": 5.1276,
+      "mismatch_count": 0,
+      "edges_checked": 0,
+      "note": "identical tiles; pixel diff across internal boundaries equals tile seam"
+    },
+    "transition_grass-dirt_12x12.png": {
+      "type": "wang16_island",
+      "mismatch_count": 0,
+      "edges_checked": 264,
+      "shared_edge_pixel_diff": 8.0179
+    },
+    "transition_grass-water_12x12.png": {
+      "type": "wang16_island",
+      "mismatch_count": 0,
+      "edges_checked": 264,
+      "shared_edge_pixel_diff": 6.9796
+    },
+    "transition_dirt-stone_12x12.png": {
+      "type": "wang16_island",
+      "mismatch_count": 0,
+      "edges_checked": 264,
+      "shared_edge_pixel_diff": 8.1449
+    },
+    "mixed_30x30_seed7.png": {
+      "type": "mixed_wang_layers",
+      "mismatch_count": 0,
+      "edges_checked": "per boundary, 2*(g-1)*(g-1)",
+      "per_boundary": {
+        "water->sand": 0,
+        "sand->dirt": 0,
+        "dirt->grass": 0,
+        "grass->stone": 0
+      },
+      "shared_edge_pixel_diff": 15.41
+    },
+    "mixed_64x64_seed7.png": {
+      "type": "mixed_wang_layers",
+      "mismatch_count": 0,
+      "edges_checked": "per boundary, 2*(g-1)*(g-1)",
+      "per_boundary": {
+        "water->sand": 0,
+        "sand->dirt": 0,
+        "dirt->grass": 0,
+        "grass->stone": 0
+      },
+      "shared_edge_pixel_diff": 11.8196
+    },
+    "sanity_wang16_island_16x16_seed1.png": {
+      "type": "wang16_island",
+      "mismatch_count": 0,
+      "edges_checked": 420,
+      "shared_edge_pixel_diff": 8.0125
+    },
+    "sanity_blob47_island_16x16_seed1.png": {
+      "type": "blob47_island",
+      "mismatch_count": 0,
+      "edges_checked": 480,
+      "shared_edge_pixel_diff": 9.8263
+    },
+    "sanity_wang16_island_16x16_seed2.png": {
+      "type": "wang16_island",
+      "mismatch_count": 0,
+      "edges_checked": 420,
+      "shared_edge_pixel_diff": 8.0072
+    },
+    "sanity_blob47_island_16x16_seed2.png": {
+      "type": "blob47_island",
+      "mismatch_count": 0,
+      "edges_checked": 480,
+      "shared_edge_pixel_diff": 9.8534
+    },
+    "sanity_wang16_island_16x16_seed3.png": {
+      "type": "wang16_island",
+      "mismatch_count": 0,
+      "edges_checked": 420,
+      "shared_edge_pixel_diff": 7.9993
+    },
+    "sanity_blob47_island_16x16_seed3.png": {
+      "type": "blob47_island",
+      "mismatch_count": 0,
+      "edges_checked": 480,
+      "shared_edge_pixel_diff": 9.8099
+    },
+    "sanity_wang16_island_16x16_seed4.png": {
+      "type": "wang16_island",
+      "mismatch_count": 0,
+      "edges_checked": 420,
+      "shared_edge_pixel_diff": 7.973
+    },
+    "sanity_blob47_island_16x16_seed4.png": {
+      "type": "blob47_island",
+      "mismatch_count": 0,
+      "edges_checked": 480,
+      "shared_edge_pixel_diff": 9.8544
+    },
+    "sanity_wang16_island_16x16_seed5.png": {
+      "type": "wang16_island",
+      "mismatch_count": 0,
+      "edges_checked": 420,
+      "shared_edge_pixel_diff": 7.9782
+    },
+    "sanity_blob47_island_16x16_seed5.png": {
+      "type": "blob47_island",
+      "mismatch_count": 0,
+      "edges_checked": 480,
+      "shared_edge_pixel_diff": 9.844
+    },
+    "sanity_wang16_island_30x30_seed3.png": {
+      "type": "wang16_island",
+      "mismatch_count": 0,
+      "edges_checked": 1624,
+      "shared_edge_pixel_diff": 7.9617
+    },
+    "sanity_blob47_island_30x30_seed3.png": {
+      "type": "blob47_island",
+      "mismatch_count": 0,
+      "edges_checked": 1740,
+      "shared_edge_pixel_diff": 9.7851
+    },
+    "sanity_blob47_noise_64x64_seed42.png": {
+      "type": "blob47_noise",
+      "mismatch_count": 0,
+      "edges_checked": 8064,
+      "shared_edge_pixel_diff": 9.7841
+    }
+  },
+  "meta": {
+    "blob47_r_out": 11
+  }
+}
